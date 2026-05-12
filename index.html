@@ -1,92 +1,83 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="html-root">
+<html lang="en" dir="ltr" id="HR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarek Wael Saleem — Architectural Engineer</title>
-<meta name="description" content="Architectural Engineer & Technical Architect with 6+ years across Syria, UAE, Iraq, KSA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ─────────────────────────────── */
+/* ═══ TOKENS ══════════════════════════════════════ */
 :root{
   --ink:#0d0d0d;--paper:#f5f2ee;--bone:#ece8e1;--stone:#c8c3bc;--ash:#8c887f;
   --gold:#b8955a;--gold2:#d4aa6a;--dark:#141210;--dark2:#1c1917;--dark3:#221e1a;
-  --serif:'Playfair Display',Georgia,serif;
-  --sans:'Outfit',system-ui,sans-serif;
-  --arabic:'Cairo',sans-serif;
+  --en:'Playfair Display',Georgia,serif;
+  --ui:'Outfit',system-ui,sans-serif;
+  --ar:'Cairo',sans-serif;
   --ease:cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--ui);font-weight:300;line-height:1.7;overflow-x:hidden}
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--dark)}
 ::-webkit-scrollbar-thumb{background:var(--gold)}
- 
-/* ── ARABIC MODE ─────────────────────────── */
-html[lang="ar"] body{font-family:var(--arabic);direction:rtl}
-html[lang="ar"] .h-tag::before,
-html[lang="ar"] .stag::before{display:none}
-html[lang="ar"] .h-tag{flex-direction:row-reverse}
-html[lang="ar"] .stag{flex-direction:row-reverse}
-html[lang="ar"] .h-sum{border-left:none;border-right:2px solid var(--gold);padding-left:0;padding-right:1.5rem}
-html[lang="ar"] .nav-links{flex-direction:row-reverse}
-html[lang="ar"] .hstats{left:5vw;right:auto;text-align:left}
-html[lang="ar"] .exp-item{padding-left:0;padding-right:1.5rem;border-left:none;border-right:1px solid rgba(184,149,90,.15)}
-html[lang="ar"] .exp-item::before{left:auto;right:-4px}
-html[lang="ar"] .cc:hover{transform:translateX(-4px)}
-html[lang="ar"] .carr{margin-left:0;margin-right:auto}
-html[lang="ar"] .ahigh{border-left:none;border-right:3px solid var(--gold)}
-html[lang="ar"] .sh{font-family:var(--arabic)}
-html[lang="ar"] .h-name{font-family:var(--arabic);font-style:normal;line-height:1.15}
-html[lang="ar"] .h-name em{font-family:var(--arabic);font-style:normal}
-html[lang="ar"] .ptitle{font-family:var(--arabic)}
-html[lang="ar"] .mtitle{font-family:var(--arabic)}
-html[lang="ar"] .logo{font-family:var(--arabic)}
-html[lang="ar"] .dlc{direction:rtl}
-html[lang="ar"] .dlbtn{flex-direction:row-reverse}
- 
-/* ── LANG TOGGLE ─────────────────────────── */
-.lang-toggle{
-  display:flex;align-items:center;gap:.5rem;
-  background:rgba(184,149,90,.12);border:1px solid rgba(184,149,90,.3);
-  padding:.45rem .9rem;cursor:pointer;
-  font-size:.68rem;letter-spacing:.1em;color:var(--paper);
-  transition:background .25s,border-color .25s;
-  font-family:var(--sans);
-}
-.lang-toggle:hover{background:rgba(184,149,90,.22);border-color:var(--gold)}
-.lang-toggle .ar-lbl{font-family:var(--arabic);font-size:.78rem;letter-spacing:0}
-.lang-toggle .globe{width:.8rem;height:.8rem;stroke:var(--gold);fill:none;stroke-width:1.5}
- 
-/* ── CURSOR ──────────────────────────────── */
+
+/* ═══ ARABIC GLOBAL OVERRIDES ══════════════════════ */
+[lang="ar"] body,[lang="ar"] *{font-family:var(--ar)!important;direction:rtl}
+[lang="ar"] .logo-name,[lang="ar"] .nav-link-txt,[lang="ar"] .mml{font-family:var(--ar)!important}
+[lang="ar"] .h-name-first{display:none}
+[lang="ar"] .h-name-ar{display:block!important;font-family:var(--ar)!important;font-style:normal!important}
+[lang="ar"] .h-tag::before,[lang="ar"] .stag::before{content:none}
+[lang="ar"] .h-sum{border-left:none;border-right:2px solid var(--gold);padding-left:0;padding-right:1.4rem}
+[lang="ar"] .ahigh{border-left:none;border-right:3px solid var(--gold)}
+[lang="ar"] .exp-item{padding-left:0;padding-right:1.5rem;border-left:none;border-right:1px solid rgba(184,149,90,.14)}
+[lang="ar"] .exp-item::before{left:auto;right:-4px}
+[lang="ar"] .skfi{left:auto!important;right:0!important}
+[lang="ar"] .carr{margin-left:0;margin-right:auto}
+[lang="ar"] .cc:hover{transform:translateX(-4px)}
+[lang="ar"] .dlc::after{transform-origin:right}
+[lang="ar"] .nav-links{flex-direction:row-reverse}
+[lang="ar"] .hstats{right:auto;left:5vw;text-align:left}
+[lang="ar"] .nav-right{flex-direction:row-reverse}
+[lang="ar"] .ptabs{flex-direction:row-reverse}
+[lang="ar"] .mmeta{direction:rtl}
+
+/* ═══ CURSOR ════════════════════════════════════════ */
 .cursor{position:fixed;width:7px;height:7px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cring{position:fixed;width:30px;height:30px;border:1px solid rgba(184,149,90,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease)}
- 
-/* ── NAV ─────────────────────────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 5vw;transition:background .4s var(--ease),padding .35s var(--ease),box-shadow .4s}
+.cring{position:fixed;width:30px;height:30px;border:1px solid rgba(184,149,90,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease)}
+
+/* ═══ NAV ═══════════════════════════════════════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 5vw;transition:background .4s,padding .35s,box-shadow .4s}
 nav.sc{background:rgba(20,18,16,.96);backdrop-filter:blur(14px);padding:1rem 5vw;box-shadow:0 1px 0 rgba(184,149,90,.12)}
-.logo{font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--paper);text-decoration:none;letter-spacing:.04em;display:flex;align-items:center;gap:.5rem}
+.logo{font-family:var(--en);font-size:1.05rem;font-weight:500;color:var(--paper);text-decoration:none;display:flex;align-items:center;gap:.5rem}
 .logo-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
 .nav-links{display:flex;gap:2.2rem;list-style:none}
-.nav-links a{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,242,238,.4);text-decoration:none;transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.nav-links a:hover,.nav-links a.cur{color:var(--paper)}
-.nav-links a:hover::after,.nav-links a.cur::after{transform:scaleX(1)}
-.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-link-txt{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,242,238,.4);text-decoration:none;transition:color .2s;position:relative;display:block}
+[lang="ar"] .nav-link-txt{letter-spacing:0;text-transform:none;font-size:.82rem}
+.nav-link-txt::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav-link-txt:hover,.nav-link-txt.cur{color:var(--paper)}
+.nav-link-txt:hover::after,.nav-link-txt.cur::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:1.1rem}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.burger span{display:block;width:22px;height:1px;background:var(--paper);transition:.35s var(--ease)}
+.burger span{display:block;width:22px;height:1px;background:var(--paper);transition:.35s}
 .burger.o span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .burger.o span:nth-child(2){opacity:0}
 .burger.o span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.mm{display:none;position:fixed;inset:0;background:var(--dark);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.25rem}
+
+/* lang button */
+.lbtn{display:flex;align-items:center;gap:.5rem;background:rgba(184,149,90,.1);border:1px solid rgba(184,149,90,.28);padding:.42rem .9rem;cursor:pointer;color:var(--paper);font-size:.72rem;transition:background .25s,border-color .25s;white-space:nowrap;font-family:var(--ar)!important}
+.lbtn:hover{background:rgba(184,149,90,.2);border-color:var(--gold)}
+.lbtn svg{width:.8rem;height:.8rem;stroke:var(--gold);fill:none;stroke-width:1.5;flex-shrink:0}
+
+/* mobile menu */
+.mm{display:none;position:fixed;inset:0;background:var(--dark);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
 .mm.o{display:flex}
-.mm a{font-family:var(--serif);font-size:1.9rem;font-style:italic;color:var(--paper);text-decoration:none;transition:color .2s}
-.mm a:hover{color:var(--gold)}
-html[lang="ar"] .mm a{font-family:var(--arabic);font-style:normal}
- 
-/* ── HERO ────────────────────────────────── */
+.mml{font-size:1.85rem;color:var(--paper);text-decoration:none;transition:color .2s;font-family:var(--ar)!important}
+[lang="en"] .mml{font-family:var(--en)!important;font-style:italic}
+.mml:hover{color:var(--gold)}
+
+/* ═══ HERO ═══════════════════════════════════════════ */
 #home{min-height:100vh;display:grid;grid-template-rows:1fr auto;position:relative;overflow:hidden;background:var(--dark)}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 75% at 78% 38%,rgba(184,149,90,.08) 0%,transparent 60%),radial-gradient(ellipse 45% 55% at 15% 85%,rgba(184,149,90,.04) 0%,transparent 55%)}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,242,238,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(245,242,238,.02) 1px,transparent 1px);background-size:80px 80px}
@@ -94,79 +85,106 @@ html[lang="ar"] .mm a{font-family:var(--arabic);font-style:normal}
 .hvl:nth-child(3){left:20%}
 .hvl:nth-child(4){right:20%}
 .hc{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding:18vh 5vw 5vh;max-width:950px}
-.h-tag{font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:2.25rem;display:flex;align-items:center;gap:1rem;animation:fu .8s var(--ease) .2s both}
+.h-tag{font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:2.2rem;display:flex;align-items:center;gap:1rem;animation:fu .8s var(--ease) .2s both}
 .h-tag::before{content:'';display:block;width:2.5rem;height:1px;background:var(--gold)}
-.h-name{font-family:var(--serif);font-size:clamp(3.5rem,8.5vw,8rem);font-weight:500;line-height:.93;color:var(--paper);margin-bottom:1.6rem;animation:fu .9s var(--ease) .35s both}
-.h-name em{display:block;font-style:italic;color:rgba(245,242,238,.28);font-weight:400;font-size:clamp(2.6rem,5.8vw,5.8rem)}
-.h-rule{width:3.5rem;height:1px;background:var(--gold);margin-bottom:1.6rem;animation:fu .7s var(--ease) .5s both}
-.h-title{font-size:clamp(.76rem,1.15vw,.9rem);letter-spacing:.13em;text-transform:uppercase;color:rgba(245,242,238,.38);margin-bottom:1.6rem;animation:fu .7s var(--ease) .55s both}
-.h-sum{font-size:clamp(.85rem,1.1vw,.92rem);max-width:510px;color:rgba(245,242,238,.48);line-height:1.9;margin-bottom:2.75rem;border-left:2px solid var(--gold);padding-left:1.4rem;animation:fu .7s var(--ease) .65s both}
+[lang="ar"] .h-tag{font-size:.9rem;letter-spacing:0;text-transform:none}
+
+/* hero name */
+.h-name-wrap{margin-bottom:1.6rem;animation:fu .9s var(--ease) .35s both}
+.h-name-first{font-family:var(--en);font-size:clamp(3.5rem,8.5vw,8rem);font-weight:500;line-height:.93;color:var(--paper);display:block}
+.h-name-last{font-family:var(--en);font-size:clamp(2.6rem,5.8vw,5.8rem);font-weight:400;font-style:italic;color:rgba(245,242,238,.28);display:block}
+.h-name-ar{font-family:var(--ar)!important;font-size:clamp(3rem,7vw,7rem);font-weight:700;color:var(--paper);display:none;line-height:1.15}
+
+.h-rule{width:3.5rem;height:1px;background:var(--gold);margin-bottom:1.5rem;animation:fu .7s var(--ease) .5s both}
+.h-title{font-size:clamp(.75rem,1.1vw,.88rem);letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,238,.38);margin-bottom:1.5rem;animation:fu .7s var(--ease) .55s both}
+[lang="ar"] .h-title{letter-spacing:0;text-transform:none;font-size:clamp(.85rem,1.2vw,1rem)}
+.h-sum{font-size:clamp(.84rem,1.1vw,.9rem);max-width:510px;color:rgba(245,242,238,.47);line-height:1.9;margin-bottom:2.75rem;border-left:2px solid var(--gold);padding-left:1.4rem;animation:fu .7s var(--ease) .65s both}
+[lang="ar"] .h-sum{font-size:clamp(.88rem,1.1vw,.95rem);line-height:2}
 .hbtns{display:flex;gap:1.2rem;flex-wrap:wrap;animation:fu .7s var(--ease) .75s both}
-.btn{display:inline-flex;align-items:center;gap:.55rem;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;padding:.85rem 2rem;border:1px solid;text-decoration:none;font-family:var(--sans);transition:background .28s var(--ease),color .28s var(--ease),border-color .28s,transform .2s}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;padding:.85rem 2rem;border:1px solid;text-decoration:none;transition:background .28s,color .28s,border-color .28s,transform .2s;white-space:nowrap}
+[lang="ar"] .btn{letter-spacing:0;text-transform:none;font-size:.88rem}
 .btn:hover{transform:translateY(-2px)}
 .btn-p{background:var(--gold);color:var(--dark);border-color:var(--gold)}
 .btn-p:hover{background:var(--gold2);border-color:var(--gold2)}
 .btn-o{background:transparent;color:var(--paper);border-color:rgba(245,242,238,.2)}
 .btn-o:hover{border-color:var(--gold);color:var(--gold)}
+/* hero stats */
 .hstats{position:absolute;right:5vw;top:50%;transform:translateY(-50%);z-index:1;display:flex;flex-direction:column;gap:2.25rem;text-align:right;animation:fl .9s var(--ease) .9s both}
-.sn{font-family:var(--serif);font-size:3.4rem;font-weight:400;color:var(--paper);line-height:1}
+.sn{font-family:var(--en);font-size:3.4rem;font-weight:400;color:var(--paper);line-height:1}
+[lang="ar"] .sn{font-family:var(--ar)!important;font-size:2.8rem}
 .sn span{color:var(--gold);font-size:2rem}
 .sl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash);margin-top:.2rem}
+[lang="ar"] .sl{letter-spacing:0;text-transform:none;font-size:.8rem}
+/* scroll hint */
 .hscroll{position:relative;z-index:1;padding:0 5vw 2.5rem;display:flex;align-items:center;gap:.85rem;animation:fu .5s var(--ease) 1.2s both}
+[lang="ar"] .hscroll{flex-direction:row-reverse}
 .hs-line{width:2.5rem;height:1px;background:rgba(245,242,238,.16)}
 .hs-txt{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,242,238,.22)}
+[lang="ar"] .hs-txt{letter-spacing:0;text-transform:none;font-size:.78rem}
 .hs-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.3;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
 @keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes fl{from{opacity:0;transform:translateX(20px) translateY(-50%)}to{opacity:1;transform:translateX(0) translateY(-50%)}}
- 
-/* ── SECTIONS ────────────────────────────── */
+
+/* ═══ SECTIONS ═══════════════════════════════════════ */
 .sec{padding:8.5rem 5vw}
 .stag{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+[lang="ar"] .stag{letter-spacing:0;text-transform:none;font-size:.82rem;flex-direction:row-reverse;justify-content:flex-end}
 .stag::before{content:'';display:block;width:1.75rem;height:1px;background:var(--gold)}
-.sh{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:400;line-height:1.1;margin-bottom:.85rem}
+.sh{font-family:var(--en);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:400;line-height:1.1;margin-bottom:.85rem}
+[lang="ar"] .sh{font-family:var(--ar)!important;font-size:clamp(1.9rem,4vw,3.4rem)}
 .sh em{font-style:italic;color:var(--ash)}
+[lang="ar"] .sh em{font-style:normal}
 .srule{width:2.5rem;height:1px;background:var(--gold);margin-bottom:3.25rem}
- 
-/* ── ABOUT ───────────────────────────────── */
+
+/* ═══ ABOUT ════════════════════════════════════════== */
 #about{background:var(--dark2)}
 #about .sh{color:var(--paper)}
 #about .sh em{color:rgba(245,242,238,.26)}
 .agrid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
 .abody{color:rgba(245,242,238,.48);font-size:.9rem;line-height:1.95}
+[lang="ar"] .abody{font-size:.92rem;line-height:2.1}
 .abody p+p{margin-top:1.15rem}
 .ahigh{margin-top:1.85rem;padding:1.35rem 1.7rem;border:1px solid rgba(184,149,90,.16);border-left:3px solid var(--gold);background:rgba(184,149,90,.03)}
 .ahigh-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+[lang="ar"] .ahigh-lbl{letter-spacing:0;text-transform:none;font-size:.8rem}
 .ahigh-txt{font-size:.82rem;color:rgba(245,242,238,.38);line-height:1.75}
- 
-/* experience */
+[lang="ar"] .ahigh-txt{font-size:.88rem;line-height:1.9}
+/* timeline */
 .exp-list{margin-top:2.25rem;display:flex;flex-direction:column}
 .exp-item{padding:1.1rem 0 1.1rem 1.5rem;border-left:1px solid rgba(184,149,90,.14);position:relative;transition:border-color .3s}
 .exp-item:hover{border-color:var(--gold)}
 .exp-item::before{content:'';position:absolute;left:-4px;top:1.5rem;width:7px;height:7px;border-radius:50%;background:var(--dark2);border:1px solid var(--gold);transition:background .3s}
 .exp-item:hover::before{background:var(--gold)}
 .ep{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
-.er{font-size:.87rem;color:var(--paper);font-weight:500;margin-bottom:.1rem;line-height:1.35}
-.ec{font-size:.75rem;color:rgba(245,242,238,.32);letter-spacing:.02em}
- 
+[lang="ar"] .ep{letter-spacing:0;text-transform:none;font-size:.78rem}
+.er{font-size:.87rem;color:var(--paper);font-weight:600;margin-bottom:.1rem;line-height:1.35}
+[lang="ar"] .er{font-size:.9rem}
+.ec{font-size:.75rem;color:rgba(245,242,238,.32)}
+[lang="ar"] .ec{font-size:.8rem}
 /* skills */
 .skwrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,149,90,.08)}
-.sk{background:var(--dark2);padding:1.3rem 1.45rem;transition:background .25s var(--ease)}
+.sk{background:var(--dark2);padding:1.3rem 1.45rem;transition:background .25s}
 .sk:hover{background:rgba(184,149,90,.07)}
 .sknm{font-size:.77rem;color:var(--paper);margin-bottom:.2rem}
+[lang="ar"] .sknm{font-size:.85rem}
 .sklv{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.58rem}
+[lang="ar"] .sklv{letter-spacing:0;text-transform:none;font-size:.75rem}
 .sktr{height:1px;background:rgba(245,242,238,.07);position:relative}
 .skfi{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;transition:width 1.3s var(--ease)}
 .edu-box{margin-top:1.4rem;padding:1.25rem 1.45rem;border:1px solid rgba(184,149,90,.13)}
 .edu-lbl{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.edu-title{font-size:.87rem;color:var(--paper);margin-bottom:.16rem;font-weight:400}
+[lang="ar"] .edu-lbl{letter-spacing:0;text-transform:none;font-size:.78rem}
+.edu-title{font-size:.87rem;color:var(--paper);margin-bottom:.16rem}
+[lang="ar"] .edu-title{font-size:.92rem}
 .edu-sub{font-size:.73rem;color:rgba(245,242,238,.3)}
- 
-/* ── PORTFOLIO ───────────────────────────── */
+[lang="ar"] .edu-sub{font-size:.8rem}
+
+/* ═══ PORTFOLIO ════════════════════════════════════== */
 #portfolio{background:var(--bone)}
 .ptabs{display:flex;margin-bottom:2.75rem;border-bottom:1px solid rgba(0,0,0,.1)}
-.tbtn{background:none;border:none;cursor:pointer;padding:.85rem 1.9rem;font-family:var(--sans);font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .25s,border-color .25s}
-html[lang="ar"] .tbtn{font-family:var(--arabic);letter-spacing:0}
+.tbtn{background:none;border:none;cursor:pointer;padding:.85rem 1.9rem;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .25s,border-color .25s;font-family:var(--ui)}
+[lang="ar"] .tbtn{font-family:var(--ar)!important;letter-spacing:0;text-transform:none;font-size:.88rem}
 .tbtn.a{color:var(--ink);border-bottom-color:var(--gold)}
 .tbtn:hover{color:var(--ink)}
 .tpanel{display:none}
@@ -179,19 +197,23 @@ html[lang="ar"] .tbtn{font-family:var(--arabic);letter-spacing:0}
 .pc:hover .pthumb img{transform:scale(1.05)}
 .pover{position:absolute;inset:0;background:rgba(13,13,13,.48);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
 .pc:hover .pover{opacity:1}
-.pvi{width:2.75rem;height:2.75rem;border:1px solid rgba(245,242,238,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;transform:scale(.75);transition:transform .3s var(--ease) .04s}
+.pvi{width:2.75rem;height:2.75rem;border:1px solid rgba(245,242,238,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;transform:scale(.75);transition:transform .3s var(--ease)}
 .pc:hover .pvi{transform:scale(1)}
 .pvi svg{width:.9rem;height:.9rem;stroke:var(--paper);fill:none;stroke-width:1.5}
 .pinfo{padding:1.15rem 1.3rem 1.45rem}
 .pcat{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.28rem}
-.ptitle{font-family:var(--serif);font-size:1.08rem;font-weight:400;margin-bottom:.28rem;color:var(--ink);line-height:1.3}
+[lang="ar"] .pcat{letter-spacing:0;text-transform:none;font-size:.75rem}
+.ptitle{font-family:var(--en);font-size:1.08rem;font-weight:400;margin-bottom:.28rem;color:var(--ink);line-height:1.3}
+[lang="ar"] .ptitle{font-family:var(--ar)!important;font-size:1rem;font-weight:600}
 .ploc{font-size:.7rem;color:var(--ash);display:flex;align-items:center;gap:.28rem}
+[lang="ar"] .ploc{font-size:.8rem;flex-direction:row-reverse;justify-content:flex-end}
 .ploc svg{width:.62rem;height:.62rem;fill:var(--gold);flex-shrink:0}
 .pc.feat{grid-column:span 2}
 .pc.feat .pthumb{aspect-ratio:16/7}
-.port-note{margin-top:1.4rem;font-size:.73rem;color:var(--ash);letter-spacing:.05em}
- 
-/* ── MODAL ───────────────────────────────── */
+.port-note{margin-top:1.4rem;font-size:.73rem;color:var(--ash)}
+[lang="ar"] .port-note{font-size:.82rem;text-align:right}
+
+/* ═══ MODAL ═════════════════════════════════════════ */
 .mbg{display:none;position:fixed;inset:0;z-index:200;background:rgba(13,13,13,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:2rem}
 .mbg.o{display:flex}
 .mbox{background:var(--paper);max-width:730px;width:100%;max-height:92vh;overflow-y:auto;position:relative;animation:mi .32s var(--ease)}
@@ -201,63 +223,81 @@ html[lang="ar"] .tbtn{font-family:var(--arabic);letter-spacing:0}
 .mimg{aspect-ratio:16/9;overflow:hidden;background:var(--stone)}
 .mimg img{width:100%;height:100%;object-fit:cover}
 .mbody{padding:2.2rem 2.2rem 2.5rem}
+[lang="ar"] .mbody{text-align:right}
 .mcat{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
-.mtitle{font-family:var(--serif);font-size:1.8rem;font-weight:400;margin-bottom:.75rem}
+[lang="ar"] .mcat{letter-spacing:0;text-transform:none;font-size:.78rem}
+.mtitle{font-family:var(--en);font-size:1.8rem;font-weight:400;margin-bottom:.75rem}
+[lang="ar"] .mtitle{font-family:var(--ar)!important;font-size:1.5rem;font-weight:700}
 .mdesc{font-size:.85rem;color:var(--ash);line-height:1.85;margin-bottom:1.65rem}
+[lang="ar"] .mdesc{font-size:.9rem;line-height:2}
 .mmeta{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
 .mmi{background:var(--bone);padding:.75rem .95rem}
 .mmil{font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem}
+[lang="ar"] .mmil{letter-spacing:0;text-transform:none;font-size:.72rem}
 .mmiv{font-size:.78rem;color:var(--ink);font-weight:500}
- 
-/* ── DOWNLOADS ───────────────────────────── */
+[lang="ar"] .mmiv{font-size:.84rem}
+
+/* ═══ DOWNLOADS ════════════════════════════════════== */
 #downloads{background:var(--dark3)}
 #downloads .sh{color:var(--paper)}
 #downloads .sh em{color:rgba(245,242,238,.24)}
 .dlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
-.dlc{display:block;text-decoration:none;padding:2.4rem 1.9rem 1.9rem;border:1px solid rgba(245,242,238,.07);transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s;position:relative;overflow:hidden}
+.dlc{display:block;text-decoration:none;padding:2.4rem 1.9rem 1.9rem;border:1px solid rgba(245,242,238,.07);transition:border-color .3s,transform .3s,background .3s;position:relative;overflow:hidden}
 .dlc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+[lang="ar"] .dlc::after{transform-origin:right}
 .dlc:hover{border-color:rgba(184,149,90,.28);transform:translateY(-4px);background:rgba(184,149,90,.04)}
 .dlc:hover::after{transform:scaleX(1)}
 .dlico{width:2.5rem;height:2.5rem;margin-bottom:1.65rem;border:1px solid rgba(184,149,90,.25);display:flex;align-items:center;justify-content:center}
 .dlico svg{width:1.15rem;height:1.15rem;stroke:var(--gold);fill:none;stroke-width:1.5}
-.dltitle{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--paper);margin-bottom:.32rem}
-html[lang="ar"] .dltitle{font-family:var(--arabic)}
-.dlsub{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ash);margin-bottom:1.9rem}
+.dltitle{font-family:var(--en);font-size:1.25rem;font-weight:400;color:var(--paper);margin-bottom:.32rem}
+[lang="ar"] .dltitle{font-family:var(--ar)!important;font-size:1.1rem;font-weight:700}
+.dlsub{font-size:.66rem;letter-spacing:.09em;color:var(--ash);margin-bottom:1.9rem}
+[lang="ar"] .dlsub{letter-spacing:0;font-size:.8rem}
 .dlbtn{display:inline-flex;align-items:center;gap:.42rem;font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
-.dlbtn svg{width:.78rem;height:.78rem;stroke:var(--gold);fill:none;stroke-width:2;transition:transform .25s var(--ease)}
+[lang="ar"] .dlbtn{letter-spacing:0;text-transform:none;font-size:.82rem;flex-direction:row-reverse}
+.dlbtn svg{width:.78rem;height:.78rem;stroke:var(--gold);fill:none;stroke-width:2;transition:transform .25s}
 .dlc:hover .dlbtn svg{transform:translateY(2px)}
- 
-/* ── CONTACT ─────────────────────────────── */
+
+/* ═══ CONTACT ══════════════════════════════════════== */
 #contact{background:var(--dark)}
 #contact .sh{color:var(--paper)}
 #contact .sh em{color:rgba(245,242,238,.24)}
 .cgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:5.5vw;align-items:start}
 .clead{font-size:.97rem;color:rgba(245,242,238,.45);line-height:1.95;margin-bottom:1.85rem}
+[lang="ar"] .clead{font-size:.95rem;line-height:2.1}
 .cnote{font-size:.74rem;color:rgba(245,242,238,.2);line-height:1.7;padding-top:1.4rem;border-top:1px solid rgba(245,242,238,.05)}
+[lang="ar"] .cnote{font-size:.8rem;line-height:1.9}
 .ccards{display:flex;flex-direction:column;gap:.88rem}
-.cc{display:flex;align-items:center;gap:1.15rem;padding:1.15rem 1.4rem;border:1px solid rgba(245,242,238,.07);text-decoration:none;color:var(--paper);transition:border-color .25s var(--ease),background .25s,transform .25s var(--ease)}
+.cc{display:flex;align-items:center;gap:1.15rem;padding:1.15rem 1.4rem;border:1px solid rgba(245,242,238,.07);text-decoration:none;color:var(--paper);transition:border-color .25s,background .25s,transform .25s}
 .cc:hover{border-color:rgba(184,149,90,.35);background:rgba(184,149,90,.06);transform:translateX(4px)}
+[lang="ar"] .cc{flex-direction:row-reverse}
 .cico{width:2.1rem;height:2.1rem;flex-shrink:0;border:1px solid rgba(184,149,90,.2);display:flex;align-items:center;justify-content:center}
 .cico svg{width:.92rem;height:.92rem;stroke:var(--gold);fill:none;stroke-width:1.5}
 .clbl{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);margin-bottom:.16rem}
+[lang="ar"] .clbl{letter-spacing:0;text-transform:none;font-size:.76rem;text-align:right}
 .cval{font-size:.84rem}
-.carr{margin-left:auto;color:var(--gold);opacity:0;transition:opacity .25s,transform .25s var(--ease);flex-shrink:0}
-.cc:hover .carr{opacity:1;transform:translateX(3px)}
- 
-/* ── FOOTER ──────────────────────────────── */
+[lang="ar"] .cval{text-align:right;font-size:.88rem}
+.carr{margin-left:auto;color:var(--gold);opacity:0;transition:opacity .25s,transform .25s;flex-shrink:0}
+[lang="ar"] .carr{margin-left:0;margin-right:auto;transform:rotate(180deg)}
+.cc:hover .carr{opacity:1}
+.cc:hover .carr{transform:translateX(3px)}
+[lang="ar"] .cc:hover .carr{transform:rotate(180deg) translateX(3px)}
+
+/* ═══ FOOTER ══════════════════════════════════════════ */
 footer{background:var(--dark);border-top:1px solid rgba(245,242,238,.05);padding:1.75rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.flogo{font-family:var(--serif);font-size:.92rem;color:rgba(245,242,238,.32);letter-spacing:.04em}
-html[lang="ar"] .flogo{font-family:var(--arabic)}
-.fcopy{font-size:.63rem;letter-spacing:.06em;color:rgba(245,242,238,.16)}
+[lang="ar"] footer{flex-direction:row-reverse}
+.flogo{font-family:var(--en);font-size:.92rem;color:rgba(245,242,238,.32)}
+[lang="ar"] .flogo{font-family:var(--ar)!important}
+.fcopy{font-size:.63rem;color:rgba(245,242,238,.16)}
+[lang="ar"] .fcopy{font-size:.75rem}
 .fg{color:var(--gold)}
- 
-/* ── REVEAL ──────────────────────────────── */
+
+/* ═══ REVEAL ══════════════════════════════════════════ */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
 .rv.up{opacity:1;transform:none}
 .rv.d1{transition-delay:.12s}
-.rv.d2{transition-delay:.22s}
- 
-/* ── RESPONSIVE ──────────────────────────── */
+
+/* ═══ RESPONSIVE ══════════════════════════════════════ */
 @media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}.pc.feat{grid-column:span 2}}
 @media(max-width:900px){.hstats{display:none}.agrid,.cgrid{grid-template-columns:1fr}.dlgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){
@@ -265,356 +305,322 @@ html[lang="ar"] .flogo{font-family:var(--arabic)}
   .pgrid{grid-template-columns:1fr}.pc.feat{grid-column:span 1}.pc.feat .pthumb{aspect-ratio:4/3}
   .skwrap{grid-template-columns:1fr}.dlgrid{grid-template-columns:1fr}
   .mmeta{grid-template-columns:1fr 1fr}.sec{padding:5rem 5vw}
-  .lang-toggle .en-lbl{display:none}
 }
 </style>
 </head>
 <body>
- 
-<!-- CURSOR -->
+
 <div class="cursor" id="cur"></div>
 <div class="cring" id="cring"></div>
- 
-<!-- NAV -->
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
 <nav id="nav">
   <a class="logo" href="#home">
     <span class="logo-dot"></span>
-    <span data-en="Tarek Wael Saleem" data-ar="طارق وائل سليم">Tarek Wael Saleem</span>
+    <span class="logo-name" id="logoName">Tarek Wael Saleem</span>
   </a>
-  <ul class="nav-links">
-    <li><a href="#home"   data-en="Home"      data-ar="الرئيسية">Home</a></li>
-    <li><a href="#about"  data-en="About"     data-ar="نبذة عني">About</a></li>
-    <li><a href="#portfolio" data-en="Portfolio" data-ar="أعمالي">Portfolio</a></li>
-    <li><a href="#downloads" data-en="Downloads" data-ar="التحميلات">Downloads</a></li>
-    <li><a href="#contact" data-en="Contact"  data-ar="تواصل">Contact</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a class="nav-link-txt" href="#home"        id="nl0">Home</a></li>
+    <li><a class="nav-link-txt" href="#about"       id="nl1">About</a></li>
+    <li><a class="nav-link-txt" href="#portfolio"   id="nl2">Portfolio</a></li>
+    <li><a class="nav-link-txt" href="#downloads"   id="nl3">Downloads</a></li>
+    <li><a class="nav-link-txt" href="#contact"     id="nl4">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <button class="lang-toggle" id="langBtn" aria-label="Switch language">
-      <svg class="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      <span class="en-lbl" id="langLabel">العربية</span>
-      <span class="ar-lbl" id="langLabelAr" style="display:none">English</span>
+    <button class="lbtn" id="lbtn">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="lbtnTxt">العربية</span>
     </button>
-    <button class="burger" id="burg" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="burger" id="burg"><span></span><span></span><span></span></button>
   </div>
 </nav>
- 
+
 <!-- MOBILE MENU -->
 <div class="mm" id="mmenu">
-  <a href="#home"      class="mml" data-en="Home"       data-ar="الرئيسية">Home</a>
-  <a href="#about"     class="mml" data-en="About"      data-ar="نبذة عني">About</a>
-  <a href="#portfolio" class="mml" data-en="Portfolio"  data-ar="أعمالي">Portfolio</a>
-  <a href="#downloads" class="mml" data-en="Downloads"  data-ar="التحميلات">Downloads</a>
-  <a href="#contact"   class="mml" data-en="Contact"    data-ar="تواصل">Contact</a>
+  <a class="mml" href="#home"        id="mm0">Home</a>
+  <a class="mml" href="#about"       id="mm1">About</a>
+  <a class="mml" href="#portfolio"   id="mm2">Portfolio</a>
+  <a class="mml" href="#downloads"   id="mm3">Downloads</a>
+  <a class="mml" href="#contact"     id="mm4">Contact</a>
 </div>
- 
-<!-- ═══════════════ HERO ═══════════════ -->
+
+<!-- ══ HERO ═════════════════════════════════════════ -->
 <section id="home">
   <div class="hbg"></div><div class="hgrid"></div>
   <div class="hvl"></div><div class="hvl"></div>
   <div class="hc">
-    <div class="h-tag" data-en="Architectural Engineer &amp; Technical Architect" data-ar="مهندس معماري ومهندس تقني">Architectural Engineer &amp; Technical Architect</div>
-    <h1 class="h-name">
-      Tarek Wael<em data-en="Saleem" data-ar="طارق وائل سليم">Saleem</em>
-    </h1>
+    <div class="h-tag" id="hTag">Architectural Engineer &amp; Technical Architect</div>
+    <div class="h-name-wrap">
+      <span class="h-name-first">Tarek Wael</span>
+      <span class="h-name-last">Saleem</span>
+      <span class="h-name-ar">طارق وائل سليم</span>
+    </div>
     <div class="h-rule"></div>
-    <p class="h-title" data-en="Shop Drawing Specialist &nbsp;·&nbsp; BIM / Revit &nbsp;·&nbsp; Technical Office" data-ar="متخصص رسومات تنفيذية &nbsp;·&nbsp; نمذجة معلومات البناء &nbsp;·&nbsp; المكتب الفني">Shop Drawing Specialist &nbsp;·&nbsp; BIM / Revit &nbsp;·&nbsp; Technical Office</p>
-    <p class="h-sum" data-en="6+ years delivering precision-driven architectural documentation across Syria, UAE, Iraq, and KSA. Bridging design intent and construction reality — from concept through IFC-ready shop drawings." data-ar="أكثر من 6 سنوات في تقديم توثيق معماري دقيق عبر سوريا والإمارات والعراق والمملكة العربية السعودية. أجسّر الفجوة بين النية التصميمية وواقع التنفيذ — من المفهوم إلى رسومات التنفيذ الجاهزة.">6+ years delivering precision-driven architectural documentation across Syria, UAE, Iraq, and KSA. Bridging design intent and construction reality — from concept through IFC-ready shop drawings.</p>
+    <p class="h-title" id="hTitle">Shop Drawing Specialist &nbsp;·&nbsp; BIM / Revit &nbsp;·&nbsp; Technical Office</p>
+    <p class="h-sum" id="hSum">6+ years delivering precision-driven architectural documentation across Syria, UAE, Iraq, and KSA. Bridging design intent and construction reality — from concept through IFC-ready shop drawings.</p>
     <div class="hbtns">
-      <a class="btn btn-p" href="#portfolio" data-en="View Portfolio" data-ar="معرض الأعمال">
+      <a class="btn btn-p" href="#portfolio" id="btnP">
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
-        <span>View Portfolio</span>
+        <span id="btnPTxt">View Portfolio</span>
       </a>
-      <a class="btn btn-o" href="#contact" data-en="Get in Touch" data-ar="تواصل معي"><span>Get in Touch</span></a>
+      <a class="btn btn-o" href="#contact" id="btnO"><span id="btnOTxt">Get in Touch</span></a>
     </div>
   </div>
   <div class="hstats">
-    <div><div class="sn">6<span>+</span></div><div class="sl" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</div></div>
-    <div><div class="sn">4</div><div class="sl" data-en="Countries" data-ar="دول">Countries</div></div>
-    <div><div class="sn">50<span>+</span></div><div class="sl" data-en="Projects" data-ar="مشروع">Projects</div></div>
+    <div><div class="sn">6<span>+</span></div><div class="sl" id="s0">Years Experience</div></div>
+    <div><div class="sn">4</div><div class="sl" id="s1">Countries</div></div>
+    <div><div class="sn">50<span>+</span></div><div class="sl" id="s2">Projects</div></div>
   </div>
   <div class="hscroll">
     <div class="hs-line"></div>
-    <div class="hs-txt" data-en="Scroll to explore" data-ar="مرر للاستكشاف">Scroll to explore</div>
+    <div class="hs-txt" id="hScroll">Scroll to explore</div>
     <div class="hs-dot"></div>
   </div>
 </section>
- 
-<!-- ═══════════════ ABOUT ═══════════════ -->
+
+<!-- ══ ABOUT ═════════════════════════════════════════ -->
 <section id="about" class="sec">
-  <div class="stag" data-en="Profile" data-ar="الملف الشخصي">Profile</div>
-  <h2 class="sh">About <em data-en="Me" data-ar="نبذة عني">Me</em></h2>
+  <div class="stag" id="stag0">Profile</div>
+  <h2 class="sh"><span id="sh0En">About </span><em id="sh0Em">Me</em></h2>
   <div class="srule"></div>
   <div class="agrid">
- 
-    <!-- LEFT: Bio + Experience -->
+
     <div class="rv">
       <div class="abody">
-        <p data-en="Architectural Engineer with 6+ years of experience in technical office operations, architectural drafting, and site execution across Syria, UAE, and Iraq. Strong expertise in AutoCAD and Revit for shop drawings, construction documentation, and execution detailing." data-ar="مهندس معماري بخبرة تتجاوز 6 سنوات في عمليات المكتب الفني والرسم المعماري والتنفيذ الميداني في سوريا والإمارات والعراق. خبرة قوية في AutoCAD وRevit لرسومات التنفيذ وتوثيق البناء والتفاصيل التنفيذية.">Architectural Engineer with 6+ years of experience in technical office operations, architectural drafting, and site execution across Syria, UAE, and Iraq. Strong expertise in AutoCAD and Revit for shop drawings, construction documentation, and execution detailing.</p>
-        <p data-en="Also experienced in architectural and interior design development, with the ability to support both technical and creative project requirements. Proven ability to work in remote and office-based environments, delivering accurate and high-quality results under tight deadlines." data-ar="لديّ خبرة أيضاً في تطوير التصميم المعماري والداخلي، مع القدرة على دعم المتطلبات التقنية والإبداعية للمشاريع. قدرة مثبتة على العمل عن بُعد وفي البيئات المكتبية بنتائج دقيقة وعالية الجودة في ظل مواعيد نهائية ضيقة.">Also experienced in architectural and interior design development, with the ability to support both technical and creative project requirements. Proven ability to work in remote and office-based environments, delivering accurate and high-quality results under tight deadlines.</p>
+        <p id="bio1">Architectural Engineer with 6+ years of experience in technical office operations, architectural drafting, and site execution across Syria, UAE, and Iraq. Strong expertise in AutoCAD and Revit for shop drawings, construction documentation, and execution detailing.</p>
+        <p id="bio2">Also experienced in architectural and interior design development, with the ability to support both technical and creative project requirements. Proven ability to work in remote and office-based environments, delivering accurate and high-quality results under tight deadlines.</p>
       </div>
       <div class="ahigh">
-        <div class="ahigh-lbl" data-en="Career Focus" data-ar="التوجه المهني">Career Focus</div>
-        <div class="ahigh-txt" data-en="Remote BIM Coordination · Technical Architecture · Shop Drawing Production · Open to international remote GCC/global roles" data-ar="تنسيق BIM عن بُعد · العمارة التقنية · إنتاج رسومات التنفيذ · منفتح على الأدوار الدولية عن بُعد">Remote BIM Coordination · Technical Architecture · Shop Drawing Production · Open to international remote GCC/global roles</div>
+        <div class="ahigh-lbl" id="focusLbl">Career Focus</div>
+        <div class="ahigh-txt" id="focusTxt">Remote BIM Coordination · Technical Architecture · Shop Drawing Production · Open to international remote GCC/global roles</div>
       </div>
- 
-      <!-- TIMELINE — exact from CV -->
       <div class="exp-list">
+        <!-- Each exp-item has [data-role] and [data-co] spans for translation -->
         <div class="exp-item">
-          <div class="ep">2024 – Present</div>
-          <div class="er" data-en="Senior Architectural Draftsman / Technical Architect (Remote)" data-ar="مسوّد معماري أول / مهندس معماري تقني (عن بُعد)">Senior Architectural Draftsman / Technical Architect (Remote)</div>
-          <div class="ec" data-en="Confidential Clients — KSA &amp; GCC · Remote – Based in Syria" data-ar="عملاء سريون — المملكة العربية السعودية ودول الخليج · عن بُعد من سوريا">Confidential Clients — KSA &amp; GCC · Remote – Based in Syria</div>
+          <div class="ep" id="ep0">2024 – Present</div>
+          <div class="er" id="er0">Senior Architectural Draftsman / Technical Architect (Remote)</div>
+          <div class="ec" id="ec0">Confidential Clients — KSA &amp; GCC · Remote – Based in Syria</div>
         </div>
         <div class="exp-item">
-          <div class="ep">10/2024 – 02/2026</div>
-          <div class="er" data-en="Site Architect Engineer" data-ar="مهندس معماري موقع">Site Architect Engineer</div>
-          <div class="ec" data-en="Byazgul Inan Construction Co — Karbala, Iraq" data-ar="شركة بيازغول إينان للإنشاءات — كربلاء، العراق">Byazgul Inan Construction Co — Karbala, Iraq</div>
+          <div class="ep" id="ep1">10/2024 – 02/2026</div>
+          <div class="er" id="er1">Site Architect Engineer</div>
+          <div class="ec" id="ec1">Byazgul Inan Construction Co — Karbala, Iraq</div>
         </div>
         <div class="exp-item">
-          <div class="ep">10/2023 – 01/2024</div>
-          <div class="er" data-en="Consultant Architectural Designer" data-ar="مصمم معماري استشاري">Consultant Architectural Designer</div>
-          <div class="ec" data-en="Bin Abed Architectural and Engineering Consultancies — Dubai, UAE" data-ar="استشارات بن عابد المعمارية والهندسية — دبي، الإمارات">Bin Abed Architectural and Engineering Consultancies — Dubai, UAE</div>
+          <div class="ep" id="ep2">10/2023 – 01/2024</div>
+          <div class="er" id="er2">Consultant Architectural Designer</div>
+          <div class="ec" id="ec2">Bin Abed Architectural and Engineering Consultancies — Dubai, UAE</div>
         </div>
         <div class="exp-item">
-          <div class="ep">04/2021 – 09/2023</div>
-          <div class="er" data-en="Technical Office Engineer" data-ar="مهندس مكتب فني">Technical Office Engineer</div>
-          <div class="ec" data-en="Zakhrafa Decore And Construction CO L.L.C — Dubai, UAE" data-ar="شركة زخرفة للديكور والإنشاء — دبي، الإمارات">Zakhrafa Decore And Construction CO L.L.C — Dubai, UAE</div>
+          <div class="ep" id="ep3">04/2021 – 09/2023</div>
+          <div class="er" id="er3">Technical Office Engineer</div>
+          <div class="ec" id="ec3">Zakhrafa Decore And Construction CO L.L.C — Dubai, UAE</div>
         </div>
         <div class="exp-item">
-          <div class="ep">03/2019 – 03/2021</div>
-          <div class="er" data-en="Independent Architectural Designer (Remote)" data-ar="مصمم معماري مستقل (عن بُعد)">Independent Architectural Designer (Remote)</div>
-          <div class="ec" data-en="Confidential Clients — UAE · Remote – Based in Syria" data-ar="عملاء سريون — الإمارات · عن بُعد من سوريا">Confidential Clients — UAE · Remote – Based in Syria</div>
+          <div class="ep" id="ep4">03/2019 – 03/2021</div>
+          <div class="er" id="er4">Independent Architectural Designer (Remote)</div>
+          <div class="ec" id="ec4">Confidential Clients — UAE · Remote – Based in Syria</div>
         </div>
       </div>
     </div>
- 
-    <!-- RIGHT: Skills + Education -->
+
     <div class="rv d1">
       <div class="skwrap">
-        <div class="sk"><div class="sknm">AutoCAD</div><div class="sklv" data-en="Advanced" data-ar="متقدم">Advanced</div><div class="sktr"><div class="skfi" data-w="95"></div></div></div>
-        <div class="sk"><div class="sknm">Revit / BIM</div><div class="sklv" data-en="Intermediate–Advanced" data-ar="متوسط–متقدم">Intermediate–Advanced</div><div class="sktr"><div class="skfi" data-w="80"></div></div></div>
-        <div class="sk"><div class="sknm" data-en="Shop Drawings" data-ar="رسومات التنفيذ">Shop Drawings</div><div class="sklv" data-en="Expert" data-ar="خبير">Expert</div><div class="sktr"><div class="skfi" data-w="96"></div></div></div>
-        <div class="sk"><div class="sknm" data-en="BOQ &amp; Quantities" data-ar="الكميات وجداول الأعمال">BOQ &amp; Quantities</div><div class="sklv" data-en="Advanced" data-ar="متقدم">Advanced</div><div class="sktr"><div class="skfi" data-w="88"></div></div></div>
-        <div class="sk"><div class="sknm" data-en="Technical Office" data-ar="المكتب الفني">Technical Office</div><div class="sklv" data-en="Advanced" data-ar="متقدم">Advanced</div><div class="sktr"><div class="skfi" data-w="90"></div></div></div>
-        <div class="sk"><div class="sknm" data-en="Technical Coordination" data-ar="التنسيق التقني">Technical Coordination</div><div class="sklv" data-en="Advanced" data-ar="متقدم">Advanced</div><div class="sktr"><div class="skfi" data-w="88"></div></div></div>
-        <div class="sk"><div class="sknm">SketchUp / Lumion / 3ds Max</div><div class="sklv" data-en="Basic" data-ar="أساسي">Basic</div><div class="sktr"><div class="skfi" data-w="55"></div></div></div>
-        <div class="sk"><div class="sknm">Adobe Photoshop</div><div class="sklv" data-en="Proficient" data-ar="جيد">Proficient</div><div class="sktr"><div class="skfi" data-w="68"></div></div></div>
+        <div class="sk"><div class="sknm">AutoCAD</div><div class="sklv" id="sk0">Advanced</div><div class="sktr"><div class="skfi" data-w="95"></div></div></div>
+        <div class="sk"><div class="sknm">Revit / BIM</div><div class="sklv" id="sk1">Intermediate–Advanced</div><div class="sktr"><div class="skfi" data-w="80"></div></div></div>
+        <div class="sk"><div class="sknm" id="sk2n">Shop Drawings</div><div class="sklv" id="sk2">Expert</div><div class="sktr"><div class="skfi" data-w="96"></div></div></div>
+        <div class="sk"><div class="sknm" id="sk3n">BOQ &amp; Quantities</div><div class="sklv" id="sk3">Advanced</div><div class="sktr"><div class="skfi" data-w="88"></div></div></div>
+        <div class="sk"><div class="sknm" id="sk4n">Technical Office</div><div class="sklv" id="sk4">Advanced</div><div class="sktr"><div class="skfi" data-w="90"></div></div></div>
+        <div class="sk"><div class="sknm" id="sk5n">Technical Coordination</div><div class="sklv" id="sk5">Advanced</div><div class="sktr"><div class="skfi" data-w="88"></div></div></div>
+        <div class="sk"><div class="sknm">SketchUp / Lumion / 3ds Max</div><div class="sklv" id="sk6">Basic</div><div class="sktr"><div class="skfi" data-w="55"></div></div></div>
+        <div class="sk"><div class="sknm">Adobe Photoshop</div><div class="sklv" id="sk7">Proficient</div><div class="sktr"><div class="skfi" data-w="68"></div></div></div>
       </div>
       <div class="edu-box">
-        <div class="edu-lbl" data-en="Education" data-ar="التعليم">Education</div>
-        <div class="edu-title" data-en="B.Sc. Architectural Engineering" data-ar="بكالوريوس هندسة معمارية">B.Sc. Architectural Engineering</div>
-        <div class="edu-sub" data-en="Hama University, Syria &nbsp;·&nbsp; 2016 – 2021" data-ar="جامعة حماة، سوريا &nbsp;·&nbsp; 2016 – 2021">Hama University, Syria &nbsp;·&nbsp; 2016 – 2021</div>
+        <div class="edu-lbl" id="eduLbl">Education</div>
+        <div class="edu-title" id="eduTitle">B.Sc. Architectural Engineering</div>
+        <div class="edu-sub" id="eduSub">Hama University, Syria &nbsp;·&nbsp; 2016 – 2021</div>
       </div>
     </div>
- 
+
   </div>
 </section>
- 
-<!-- ═══════════════ PORTFOLIO ═══════════════ -->
+
+<!-- ══ PORTFOLIO ══════════════════════════════════════ -->
 <section id="portfolio" class="sec">
-  <div class="stag" data-en="Work" data-ar="أعمالي">Work</div>
-  <h2 class="sh">Selected <em data-en="Projects" data-ar="مشاريع مختارة">Projects</em></h2>
+  <div class="stag" id="stag1">Work</div>
+  <h2 class="sh"><span id="sh1En">Selected </span><em id="sh1Em">Projects</em></h2>
   <div class="srule"></div>
- 
+
   <div class="ptabs">
-    <button class="tbtn a" data-tab="int" data-en="Interior Design" data-ar="التصميم الداخلي">Interior Design</button>
-    <button class="tbtn"   data-tab="ext" data-en="Exterior &amp; Architectural" data-ar="التصميم الخارجي والمعماري">Exterior &amp; Architectural</button>
+    <button class="tbtn a" data-tab="int" id="tab0">Interior Design</button>
+    <button class="tbtn"   data-tab="ext" id="tab1">Exterior &amp; Architectural</button>
   </div>
- 
-  <!-- ── INTERIOR ── -->
+
+  <!-- INTERIOR -->
   <div class="tpanel a" id="tab-int">
     <div class="pgrid rv">
- 
-      <!-- PROJECT 1: Majlis -->
       <div class="pc feat" data-p="i0">
         <div class="pthumb">
-          <!-- TO ADD YOUR IMAGE: replace the src below with your image filename e.g. src="images/majlis.jpg" -->
-          <img src="images/interior_majlis.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 360%22%3E%3Crect width=%22800%22 height=%22360%22 fill=%22%232d2318%22/%3E%3Ctext x=%22400%22 y=%22165%22 font-family=%22Georgia%22 font-size=%2215%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.6%22%3EInterior Majlis Design%3C/text%3E%3Ctext x=%22400%22 y=%22195%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd image: images/interior_majlis.jpg%3C/text%3E%3C/svg%3E'" alt="Interior Majlis Design">
+          <img src="images/interior_majlis.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 360%22%3E%3Crect width=%22800%22 height=%22360%22 fill=%22%232d2318%22/%3E%3Ctext x=%22400%22 y=%22170%22 font-family=%22Georgia%22 font-size=%2215%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EInterior Majlis%3C/text%3E%3Ctext x=%22400%22 y=%22200%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/interior_majlis.jpg%3C/text%3E%3C/svg%3E'" alt="Majlis Design">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Interior Design · Featured" data-ar="تصميم داخلي · مميز">Interior Design · Featured</div>
-          <div class="ptitle" data-en="Interior Majlis Design" data-ar="تصميم المجلس الداخلي">Interior Majlis Design</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Luxury Residential, UAE" data-ar="مسكن فاخر، الإمارات">Luxury Residential, UAE</span></div>
+          <div class="pcat" id="pc_i0">Interior Design · Featured</div>
+          <div class="ptitle" id="pt_i0">Interior Majlis Design</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_i0">Luxury Residential, UAE</span></div>
         </div>
       </div>
- 
-      <!-- PROJECT 2: Living Area -->
       <div class="pc" data-p="i1">
         <div class="pthumb">
-          <img src="images/interior_living.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23281e12%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3EInterior Living Area%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/interior_living.jpg%3C/text%3E%3C/svg%3E'" alt="Interior Living Area">
+          <img src="images/interior_living.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23281e12%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3ELiving Area%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/interior_living.jpg%3C/text%3E%3C/svg%3E'" alt="Living Area">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Interior Design" data-ar="تصميم داخلي">Interior Design</div>
-          <div class="ptitle" data-en="Interior Living Area Design" data-ar="تصميم منطقة المعيشة الداخلية">Interior Living Area Design</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Residential Villa, UAE" data-ar="فيلا سكنية، الإمارات">Residential Villa, UAE</span></div>
+          <div class="pcat" id="pc_i1">Interior Design</div>
+          <div class="ptitle" id="pt_i1">Interior Living Area Design</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_i1">Residential Villa, UAE</span></div>
         </div>
       </div>
- 
-      <!-- PROJECT 3: Bedroom -->
       <div class="pc" data-p="i2">
         <div class="pthumb">
-          <img src="images/interior_bedroom.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23221810%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3EInterior Bedroom%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/interior_bedroom.jpg%3C/text%3E%3C/svg%3E'" alt="Interior Bedroom">
+          <img src="images/interior_bedroom.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23221810%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EBedroom%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/interior_bedroom.jpg%3C/text%3E%3C/svg%3E'" alt="Bedroom">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Interior Design" data-ar="تصميم داخلي">Interior Design</div>
-          <div class="ptitle" data-en="Interior Bedroom Design" data-ar="تصميم غرفة النوم الداخلية">Interior Bedroom Design</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Luxury Villa, Dubai, UAE" data-ar="فيلا فاخرة، دبي، الإمارات">Luxury Villa, Dubai, UAE</span></div>
+          <div class="pcat" id="pc_i2">Interior Design</div>
+          <div class="ptitle" id="pt_i2">Interior Bedroom Design</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_i2">Luxury Villa, Dubai, UAE</span></div>
         </div>
       </div>
- 
-      <!-- PROJECT 4: Dressing -->
       <div class="pc" data-p="i3">
         <div class="pthumb">
-          <img src="images/interior_dressing.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%231e160e%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3EInterior Dressing Room%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/interior_dressing.jpg%3C/text%3E%3C/svg%3E'" alt="Interior Dressing Room">
+          <img src="images/interior_dressing.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%231e160e%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EDressing Room%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/interior_dressing.jpg%3C/text%3E%3C/svg%3E'" alt="Dressing Room">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Interior Design" data-ar="تصميم داخلي">Interior Design</div>
-          <div class="ptitle" data-en="Interior Dressing Room Design" data-ar="تصميم غرفة الملابس الداخلية">Interior Dressing Room Design</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Zakhrafa Decor, Dubai, UAE" data-ar="زخرفة للديكور، دبي، الإمارات">Zakhrafa Decor, Dubai, UAE</span></div>
+          <div class="pcat" id="pc_i3">Interior Design</div>
+          <div class="ptitle" id="pt_i3">Interior Dressing Room Design</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_i3">Zakhrafa Decor, Dubai, UAE</span></div>
         </div>
       </div>
- 
-      <!-- PROJECT 5: Bathroom -->
       <div class="pc" data-p="i4">
         <div class="pthumb">
-          <img src="images/interior_bathroom.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23261c12%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3EInterior Bathroom%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/interior_bathroom.jpg%3C/text%3E%3C/svg%3E'" alt="Interior Bathroom">
+          <img src="images/interior_bathroom.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23261c12%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EBathroom%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/interior_bathroom.jpg%3C/text%3E%3C/svg%3E'" alt="Bathroom">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Interior Design" data-ar="تصميم داخلي">Interior Design</div>
-          <div class="ptitle" data-en="Interior Bathroom Design" data-ar="تصميم الحمام الداخلي">Interior Bathroom Design</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Zakhrafa Decor, Dubai, UAE" data-ar="زخرفة للديكور، دبي، الإمارات">Zakhrafa Decor, Dubai, UAE</span></div>
+          <div class="pcat" id="pc_i4">Interior Design</div>
+          <div class="ptitle" id="pt_i4">Interior Bathroom Design</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_i4">Zakhrafa Decor, Dubai, UAE</span></div>
         </div>
       </div>
- 
     </div>
-    <p class="port-note" data-en="↓ Download the full Interior Portfolio PDF below to view all high-resolution renders." data-ar="↓ حمّل ملف البورتفوليو الداخلي الكامل أدناه لعرض جميع الصور عالية الدقة.">↓ Download the full Interior Portfolio PDF below to view all high-resolution renders.</p>
+    <p class="port-note" id="portNoteInt">↓ Download the full Interior Portfolio PDF below to view all high-resolution renders.</p>
   </div>
- 
-  <!-- ── EXTERIOR ── -->
+
+  <!-- EXTERIOR -->
   <div class="tpanel" id="tab-ext">
     <div class="pgrid rv">
- 
-      <!-- EXT 1: Al Awir -->
       <div class="pc feat" data-p="e0">
         <div class="pthumb">
-          <img src="images/ext_alawir.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 360%22%3E%3Crect width=%22800%22 height=%22360%22 fill=%22%231e1e18%22/%3E%3Ctext x=%22400%22 y=%22160%22 font-family=%22Georgia%22 font-size=%2215%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.6%22%3EResidence Villa G%2B2 — Al Awir%3C/text%3E%3Ctext x=%22400%22 y=%22190%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22%23666050%22 text-anchor=%22middle%22%3EAdd: images/ext_alawir.jpg%3C/text%3E%3C/svg%3E'" alt="Villa Al Awir">
+          <img src="images/ext_alawir.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 360%22%3E%3Crect width=%22800%22 height=%22360%22 fill=%22%231e1e18%22/%3E%3Ctext x=%22400%22 y=%22170%22 font-family=%22Georgia%22 font-size=%2215%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EVilla G%2B2 — Al Awir%3C/text%3E%3Ctext x=%22400%22 y=%22200%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22%23666050%22 text-anchor=%22middle%22%3Eimages/ext_alawir.jpg%3C/text%3E%3C/svg%3E'" alt="Al Awir Villa">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Exterior / Architectural · Featured" data-ar="تصميم خارجي · مميز">Exterior / Architectural · Featured</div>
-          <div class="ptitle" data-en="Residence Villa G+2 — Al Awir" data-ar="فيلا سكنية ط+2 — العوير">Residence Villa G+2 — Al Awir</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Al Awir, Dubai, UAE · Full Arch. Drawings" data-ar="العوير، دبي، الإمارات · رسومات معمارية كاملة">Al Awir, Dubai, UAE · Full Arch. Drawings</span></div>
+          <div class="pcat" id="pc_e0">Exterior / Architectural · Featured</div>
+          <div class="ptitle" id="pt_e0">Residence Villa G+2 — Al Awir</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_e0">Al Awir, Dubai, UAE · Full Arch. Drawings</span></div>
         </div>
       </div>
- 
-      <!-- EXT 2: Al Barsha -->
       <div class="pc" data-p="e1">
         <div class="pthumb">
-          <img src="images/ext_albarsha.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%231a1a14%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3EVilla G%2B2 — Al Barsha%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/ext_albarsha.jpg%3C/text%3E%3C/svg%3E'" alt="Villa Al Barsha">
+          <img src="images/ext_albarsha.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%231a1a14%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EVilla G%2B2 Al Barsha%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/ext_albarsha.jpg%3C/text%3E%3C/svg%3E'" alt="Al Barsha Villa">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Exterior / Architectural" data-ar="تصميم خارجي / معماري">Exterior / Architectural</div>
-          <div class="ptitle" data-en="Residence Villa G+2 — Al Barsha" data-ar="فيلا سكنية ط+2 — البرشاء">Residence Villa G+2 — Al Barsha</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Al Barsha, Dubai, UAE" data-ar="البرشاء، دبي، الإمارات">Al Barsha, Dubai, UAE</span></div>
+          <div class="pcat" id="pc_e1">Exterior / Architectural</div>
+          <div class="ptitle" id="pt_e1">Residence Villa G+2 — Al Barsha</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_e1">Al Barsha, Dubai, UAE</span></div>
         </div>
       </div>
- 
-      <!-- EXT 3: Jumeira -->
       <div class="pc" data-p="e2">
         <div class="pthumb">
-          <img src="images/ext_jumeira.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%231c1c16%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3EVilla G%2B1 — Jumeira%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/ext_jumeira.jpg%3C/text%3E%3C/svg%3E'" alt="Villa Jumeira">
+          <img src="images/ext_jumeira.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%231c1c16%22/%3E%3Ctext x=%22300%22 y=%22215%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3EVilla G%2B1 Jumeira%3C/text%3E%3Ctext x=%22300%22 y=%22240%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/ext_jumeira.jpg%3C/text%3E%3C/svg%3E'" alt="Jumeira Villa">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Exterior / Architectural" data-ar="تصميم خارجي / معماري">Exterior / Architectural</div>
-          <div class="ptitle" data-en="Residence Villa G+1 — Jumeira" data-ar="فيلا سكنية ط+1 — جميرا">Residence Villa G+1 — Jumeira</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Jumeira, Dubai, UAE" data-ar="جميرا، دبي، الإمارات">Jumeira, Dubai, UAE</span></div>
+          <div class="pcat" id="pc_e2">Exterior / Architectural</div>
+          <div class="ptitle" id="pt_e2">Residence Villa G+1 — Jumeira</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_e2">Jumeira, Dubai, UAE</span></div>
         </div>
       </div>
- 
-      <!-- EXT 4: Deira G+6 -->
       <div class="pc" data-p="e3">
         <div class="pthumb">
-          <img src="images/ext_deira.jpg" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23181614%22/%3E%3Ctext x=%22300%22 y=%22205%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22 opacity=%22.5%22%3ECommercial Building G%2B6%3C/text%3E%3Ctext x=%22300%22 y=%22230%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3EAdd: images/ext_deira.jpg%3C/text%3E%3C/svg%3E'" alt="Commercial Building Deira">
+          <img src="images/ext_deira.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 450%22%3E%3Crect width=%22600%22 height=%22450%22 fill=%22%23181614%22/%3E%3Ctext x=%22300%22 y=%22210%22 font-family=%22Georgia%22 font-size=%2213%22 fill=%22%23b8955a%22 text-anchor=%22middle%22%3ECommercial G%2B6 Deira%3C/text%3E%3Ctext x=%22300%22 y=%22235%22 font-family=%22sans-serif%22 font-size=%2210%22 fill=%22%23665840%22 text-anchor=%22middle%22%3Eimages/ext_deira.jpg%3C/text%3E%3C/svg%3E'" alt="Commercial Deira">
           <div class="pover"><div class="pvi"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
         </div>
         <div class="pinfo">
-          <div class="pcat" data-en="Exterior / Architectural" data-ar="تصميم خارجي / معماري">Exterior / Architectural</div>
-          <div class="ptitle" data-en="Commercial + Residence Building G+6" data-ar="مبنى تجاري وسكني ط+6">Commercial + Residence Building G+6</div>
-          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span data-en="Deira, Dubai, UAE" data-ar="ديرة، دبي، الإمارات">Deira, Dubai, UAE</span></div>
+          <div class="pcat" id="pc_e3">Exterior / Architectural</div>
+          <div class="ptitle" id="pt_e3">Commercial + Residence Building G+6</div>
+          <div class="ploc"><svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z"/></svg><span id="pl_e3">Deira, Dubai, UAE</span></div>
         </div>
       </div>
- 
     </div>
-    <p class="port-note" data-en="↓ Download the full Exterior Portfolio PDF below to view all high-resolution renders." data-ar="↓ حمّل ملف البورتفوليو الخارجي الكامل أدناه لعرض جميع الصور عالية الدقة.">↓ Download the full Exterior Portfolio PDF below to view all high-resolution renders.</p>
+    <p class="port-note" id="portNoteExt">↓ Download the full Exterior Portfolio PDF below to view all high-resolution renders.</p>
   </div>
 </section>
- 
-<!-- ═══════════════ DOWNLOADS ═══════════════ -->
+
+<!-- ══ DOWNLOADS ══════════════════════════════════════ -->
 <section id="downloads" class="sec">
-  <div class="stag" data-en="Documents" data-ar="المستندات">Documents</div>
-  <h2 class="sh">Downloads &amp; <em data-en="Resources" data-ar="الموارد">Resources</em></h2>
+  <div class="stag" id="stag2">Documents</div>
+  <h2 class="sh"><span id="sh2En">Downloads &amp; </span><em id="sh2Em">Resources</em></h2>
   <div class="srule"></div>
   <div class="dlgrid rv">
     <a class="dlc" href="ENG_TarekCVPlus.pdf" download>
       <div class="dlico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg></div>
-      <div class="dltitle" data-en="Curriculum Vitae" data-ar="السيرة الذاتية">Curriculum Vitae</div>
-      <div class="dlsub" data-en="PDF · Tarek Wael Saleem · 2025" data-ar="PDF · طارق وائل سليم · 2025">PDF · Tarek Wael Saleem · 2025</div>
-      <div class="dlbtn">
-        <span data-en="Download CV" data-ar="تحميل السيرة">Download CV</span>
-        <svg viewBox="0 0 24 24"><path d="M12 3v12M6 15l6 6 6-6"/></svg>
-      </div>
+      <div class="dltitle" id="dl0t">Curriculum Vitae</div>
+      <div class="dlsub" id="dl0s">PDF · Tarek Wael Saleem · 2025</div>
+      <div class="dlbtn"><span id="dl0b">Download CV</span><svg viewBox="0 0 24 24"><path d="M12 3v12M6 15l6 6 6-6"/></svg></div>
     </a>
     <a class="dlc" href="Portfolio_Interior.pdf" download>
       <div class="dlico"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><rect x="6" y="9" width="5" height="5" rx=".5"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="13" x2="18" y2="13"/></svg></div>
-      <div class="dltitle" data-en="Interior Portfolio" data-ar="بورتفوليو التصميم الداخلي">Interior Portfolio</div>
-      <div class="dlsub" data-en="PDF · Interior Design Projects 2020–2024" data-ar="PDF · مشاريع التصميم الداخلي 2020–2024">PDF · Interior Design Projects 2020–2024</div>
-      <div class="dlbtn">
-        <span data-en="Download" data-ar="تحميل">Download</span>
-        <svg viewBox="0 0 24 24"><path d="M12 3v12M6 15l6 6 6-6"/></svg>
-      </div>
+      <div class="dltitle" id="dl1t">Interior Portfolio</div>
+      <div class="dlsub" id="dl1s">PDF · Interior Design Projects 2020–2024</div>
+      <div class="dlbtn"><span id="dl1b">Download</span><svg viewBox="0 0 24 24"><path d="M12 3v12M6 15l6 6 6-6"/></svg></div>
     </a>
     <a class="dlc" href="Portfolio_Exterior.pdf" download>
       <div class="dlico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-      <div class="dltitle" data-en="Exterior Portfolio" data-ar="بورتفوليو التصميم الخارجي">Exterior Portfolio</div>
-      <div class="dlsub" data-en="PDF · Architectural Projects 2020–2024" data-ar="PDF · مشاريع معمارية 2020–2024">PDF · Architectural Projects 2020–2024</div>
-      <div class="dlbtn">
-        <span data-en="Download" data-ar="تحميل">Download</span>
-        <svg viewBox="0 0 24 24"><path d="M12 3v12M6 15l6 6 6-6"/></svg>
-      </div>
+      <div class="dltitle" id="dl2t">Exterior Portfolio</div>
+      <div class="dlsub" id="dl2s">PDF · Architectural Projects 2020–2024</div>
+      <div class="dlbtn"><span id="dl2b">Download</span><svg viewBox="0 0 24 24"><path d="M12 3v12M6 15l6 6 6-6"/></svg></div>
     </a>
   </div>
 </section>
- 
-<!-- ═══════════════ CONTACT ═══════════════ -->
+
+<!-- ══ CONTACT ════════════════════════════════════════ -->
 <section id="contact" class="sec">
-  <div class="stag" data-en="Get in Touch" data-ar="تواصل معي">Get in Touch</div>
-  <h2 class="sh">Let's <em data-en="Connect" data-ar="نتواصل">Connect</em></h2>
+  <div class="stag" id="stag3">Get in Touch</div>
+  <h2 class="sh"><span id="sh3En">Let's </span><em id="sh3Em">Connect</em></h2>
   <div class="srule"></div>
   <div class="cgrid rv">
     <div>
-      <p class="clead" data-en="Available for remote Technical Architecture and BIM coordination roles. I respond to all professional enquiries within 24 hours — whether you have a project opportunity, a collaboration in mind, or simply wish to discuss architectural work." data-ar="متاح لأدوار الهندسة المعمارية التقنية والتنسيق عن بُعد. أردّ على جميع الاستفسارات المهنية خلال 24 ساعة — سواء كان لديك فرصة مشروع أو تعاون أو مجرد نقاش معماري.">Available for remote Technical Architecture and BIM coordination roles. I respond to all professional enquiries within 24 hours — whether you have a project opportunity, a collaboration in mind, or simply wish to discuss architectural work.</p>
-      <p class="cnote" data-en="Arabic (Native) · English (Proficient) · Based in Salamieh, Hama, Syria · Available for GCC &amp; global remote roles" data-ar="العربية (اللغة الأم) · الإنجليزية (متمكن) · مقيم في سلمية، حماة، سوريا · متاح للعمل عن بُعد دولياً">Arabic (Native) · English (Proficient) · Based in Salamieh, Hama, Syria · Available for GCC &amp; global remote roles</p>
+      <p class="clead" id="clead">Available for remote Technical Architecture and BIM coordination roles. I respond to all professional enquiries within 24 hours — whether you have a project opportunity, a collaboration in mind, or simply wish to discuss architectural work.</p>
+      <p class="cnote" id="cnote">Arabic (Native) · English (Proficient) · Based in Salamieh, Hama, Syria · Available for GCC &amp; global remote roles</p>
     </div>
     <div class="ccards">
       <a class="cc" href="mailto:tareqr2029@gmail.com">
         <div class="cico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div><div class="clbl" data-en="Email" data-ar="البريد الإلكتروني">Email</div><div class="cval">tareqr2029@gmail.com</div></div>
+        <div><div class="clbl" id="cc0l">Email</div><div class="cval">tareqr2029@gmail.com</div></div>
         <div class="carr">→</div>
       </a>
       <a class="cc" href="tel:+963984041662">
         <div class="cico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
-        <div><div class="clbl" data-en="Phone" data-ar="الهاتف">Phone</div><div class="cval">+963 984 041 662</div></div>
+        <div><div class="clbl" id="cc1l">Phone</div><div class="cval">+963 984 041 662</div></div>
         <div class="carr">→</div>
       </a>
       <a class="cc" href="https://wa.me/963984041662" target="_blank" rel="noopener">
         <div class="cico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-        <div><div class="clbl">WhatsApp</div><div class="cval" data-en="Message on WhatsApp" data-ar="راسلني على واتساب">Message on WhatsApp</div></div>
+        <div><div class="clbl">WhatsApp</div><div class="cval" id="cc2v">Message on WhatsApp</div></div>
         <div class="carr">→</div>
       </a>
       <a class="cc" href="https://www.linkedin.com/in/tarek-saleem" target="_blank" rel="noopener">
@@ -625,16 +631,16 @@ html[lang="ar"] .flogo{font-family:var(--arabic)}
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
-  <span class="flogo">TWS <span class="fg">·</span> <span data-en="Architectural Engineer" data-ar="مهندس معماري">Architectural Engineer</span></span>
-  <span class="fcopy">© 2025 Tarek Wael Saleem</span>
+  <span class="flogo"><span id="flogoTxt">TWS · Architectural Engineer</span></span>
+  <span class="fcopy" id="fcopy">© 2025 Tarek Wael Saleem · All rights reserved</span>
 </footer>
- 
+
 <!-- MODAL -->
 <div class="mbg" id="mbg">
-  <div class="mbox" id="mbox">
+  <div class="mbox">
     <button class="mcls" id="mcls">✕</button>
     <div class="mimg" id="mimg"></div>
     <div class="mbody">
@@ -645,9 +651,236 @@ html[lang="ar"] .flogo{font-family:var(--arabic)}
     </div>
   </div>
 </div>
- 
+
 <script>
-// ── CURSOR ──────────────────────────────────────
+/* ════════════════════════════════════════════════
+   TRANSLATION DICTIONARY — 100% Arabic, no English
+════════════════════════════════════════════════ */
+const T = {
+  en:{
+    logoName:'Tarek Wael Saleem',
+    lbtn:'العربية',
+    nl:['Home','About','Portfolio','Downloads','Contact'],
+    mm:['Home','About','Portfolio','Downloads','Contact'],
+    hTag:'Architectural Engineer & Technical Architect',
+    hTitle:'Shop Drawing Specialist · BIM / Revit · Technical Office',
+    hSum:'6+ years delivering precision-driven architectural documentation across Syria, UAE, Iraq, and KSA. Bridging design intent and construction reality — from concept through IFC-ready shop drawings.',
+    btnP:'View Portfolio', btnO:'Get in Touch',
+    s:['Years Experience','Countries','Projects'],
+    hScroll:'Scroll to explore',
+    stag:['Profile','Work','Documents','Get in Touch'],
+    sh0:'About ', sh0em:'Me',
+    sh1:'Selected ', sh1em:'Projects',
+    sh2:'Downloads & ', sh2em:'Resources',
+    sh3:"Let's ", sh3em:'Connect',
+    bio1:'Architectural Engineer with 6+ years of experience in technical office operations, architectural drafting, and site execution across Syria, UAE, and Iraq. Strong expertise in AutoCAD and Revit for shop drawings, construction documentation, and execution detailing.',
+    bio2:'Also experienced in architectural and interior design development, with the ability to support both technical and creative project requirements. Proven ability to work in remote and office-based environments, delivering accurate and high-quality results under tight deadlines.',
+    focusLbl:'Career Focus',
+    focusTxt:'Remote BIM Coordination · Technical Architecture · Shop Drawing Production · Open to international remote GCC/global roles',
+    er:['Senior Architectural Draftsman / Technical Architect (Remote)','Site Architect Engineer','Consultant Architectural Designer','Technical Office Engineer','Independent Architectural Designer (Remote)'],
+    ec:['Confidential Clients — KSA & GCC · Remote – Based in Syria','Byazgul Inan Construction Co — Karbala, Iraq','Bin Abed Architectural and Engineering Consultancies — Dubai, UAE','Zakhrafa Decore And Construction CO L.L.C — Dubai, UAE','Confidential Clients — UAE · Remote – Based in Syria'],
+    sk:['Advanced','Intermediate–Advanced','Expert','Advanced','Advanced','Advanced','Basic','Proficient'],
+    sk2n:'Shop Drawings', sk3n:'BOQ & Quantities', sk4n:'Technical Office', sk5n:'Technical Coordination',
+    eduLbl:'Education', eduTitle:'B.Sc. Architectural Engineering', eduSub:'Hama University, Syria · 2016 – 2021',
+    tab:['Interior Design','Exterior & Architectural'],
+    pc_i:['Interior Design · Featured','Interior Design','Interior Design','Interior Design','Interior Design'],
+    pt_i:['Interior Majlis Design','Interior Living Area Design','Interior Bedroom Design','Interior Dressing Room Design','Interior Bathroom Design'],
+    pl_i:['Luxury Residential, UAE','Residential Villa, UAE','Luxury Villa, Dubai, UAE','Zakhrafa Decor, Dubai, UAE','Zakhrafa Decor, Dubai, UAE'],
+    pc_e:['Exterior / Architectural · Featured','Exterior / Architectural','Exterior / Architectural','Exterior / Architectural'],
+    pt_e:['Residence Villa G+2 — Al Awir','Residence Villa G+2 — Al Barsha','Residence Villa G+1 — Jumeira','Commercial + Residence Building G+6'],
+    pl_e:['Al Awir, Dubai, UAE · Full Arch. Drawings','Al Barsha, Dubai, UAE','Jumeira, Dubai, UAE','Deira, Dubai, UAE'],
+    portNoteInt:'↓ Download the full Interior Portfolio PDF below to view all high-resolution renders.',
+    portNoteExt:'↓ Download the full Exterior Portfolio PDF below to view all high-resolution renders.',
+    dl_t:['Curriculum Vitae','Interior Portfolio','Exterior Portfolio'],
+    dl_s:['PDF · Tarek Wael Saleem · 2025','PDF · Interior Design Projects 2020–2024','PDF · Architectural Projects 2020–2024'],
+    dl_b:['Download CV','Download','Download'],
+    clead:'Available for remote Technical Architecture and BIM coordination roles. I respond to all professional enquiries within 24 hours — whether you have a project opportunity, a collaboration in mind, or simply wish to discuss architectural work.',
+    cnote:'Arabic (Native) · English (Proficient) · Based in Salamieh, Hama, Syria · Available for GCC & global remote roles',
+    cc0l:'Email', cc1l:'Phone', cc2v:'Message on WhatsApp',
+    flogoTxt:'TWS · Architectural Engineer',
+    fcopy:'© 2025 Tarek Wael Saleem · All rights reserved'
+  },
+  ar:{
+    logoName:'طارق وائل سليم',
+    lbtn:'English',
+    nl:['الرئيسية','نبذة عني','أعمالي','التحميلات','تواصل'],
+    mm:['الرئيسية','نبذة عني','أعمالي','التحميلات','تواصل'],
+    hTag:'مهندس معماري ومهندس تقني',
+    hTitle:'متخصص رسومات تنفيذية · نمذجة معلومات البناء · المكتب الفني',
+    hSum:'أكثر من 6 سنوات في تقديم توثيق معماري دقيق عبر سوريا والإمارات والعراق والمملكة العربية السعودية. أجسّر الفجوة بين النية التصميمية وواقع التنفيذ — من المفهوم إلى رسومات التنفيذ الجاهزة.',
+    btnP:'معرض الأعمال', btnO:'تواصل معي',
+    s:['سنوات خبرة','دول','مشروع'],
+    hScroll:'مرر للاستكشاف',
+    stag:['الملف الشخصي','أعمالي','التحميلات','تواصل معي'],
+    sh0:'نبذة ', sh0em:'عني',
+    sh1:'مشاريع ', sh1em:'مختارة',
+    sh2:'التحميلات و', sh2em:'الموارد',
+    sh3:'لنكن على ', sh3em:'تواصل',
+    bio1:'مهندس معماري بخبرة تتجاوز 6 سنوات في عمليات المكتب الفني والرسم المعماري والتنفيذ الميداني في سوريا والإمارات والعراق. خبرة متقدمة في برامج أوتوكاد وريفيت لإنتاج رسومات التنفيذ وتوثيق البناء والتفاصيل التنفيذية.',
+    bio2:'خبرة واسعة في تطوير التصميم المعماري والداخلي، مع القدرة على تلبية المتطلبات التقنية والإبداعية للمشاريع. قدرة مُثبتة على العمل عن بُعد وفي البيئات المكتبية بنتائج دقيقة وعالية الجودة في ظل مواعيد نهائية ضيقة.',
+    focusLbl:'التوجه المهني',
+    focusTxt:'تنسيق نمذجة معلومات البناء عن بُعد · الهندسة المعمارية التقنية · إنتاج رسومات التنفيذ · منفتح على الأدوار الدولية عن بُعد في الخليج والعالم',
+    er:['مسوّد معماري أول / مهندس معماري تقني (عن بُعد)','مهندس معماري موقع','مصمم معماري استشاري','مهندس مكتب فني','مصمم معماري مستقل (عن بُعد)'],
+    ec:['عملاء سريون — المملكة العربية السعودية ودول الخليج · عن بُعد من سوريا','شركة بيازغول إينان للإنشاءات — كربلاء، العراق','استشارات بن عابد المعمارية والهندسية — دبي، الإمارات','شركة زخرفة للديكور والإنشاء — دبي، الإمارات','عملاء سريون — الإمارات · عن بُعد من سوريا'],
+    sk:['متقدم','متوسط–متقدم','خبير','متقدم','متقدم','متقدم','أساسي','جيد'],
+    sk2n:'رسومات التنفيذ', sk3n:'جداول الكميات والأعمال', sk4n:'المكتب الفني', sk5n:'التنسيق التقني',
+    eduLbl:'التعليم', eduTitle:'بكالوريوس هندسة معمارية', eduSub:'جامعة حماة، سوريا · 2016 – 2021',
+    tab:['التصميم الداخلي','التصميم الخارجي والمعماري'],
+    pc_i:['تصميم داخلي · مميز','تصميم داخلي','تصميم داخلي','تصميم داخلي','تصميم داخلي'],
+    pt_i:['تصميم المجلس الداخلي','تصميم منطقة المعيشة','تصميم غرفة النوم','تصميم غرفة الملابس','تصميم الحمام'],
+    pl_i:['مسكن فاخر، الإمارات','فيلا سكنية، الإمارات','فيلا فاخرة، دبي، الإمارات','زخرفة للديكور، دبي، الإمارات','زخرفة للديكور، دبي، الإمارات'],
+    pc_e:['تصميم خارجي · مميز','تصميم خارجي / معماري','تصميم خارجي / معماري','تصميم خارجي / معماري'],
+    pt_e:['فيلا سكنية أرضي+2 — العوير','فيلا سكنية أرضي+2 — البرشاء','فيلا سكنية أرضي+1 — جميرا','مبنى تجاري وسكني أرضي+6'],
+    pl_e:['العوير، دبي، الإمارات · رسومات معمارية كاملة','البرشاء، دبي، الإمارات','جميرا، دبي، الإمارات','ديرة، دبي، الإمارات'],
+    portNoteInt:'↓ حمّل ملف البورتفوليو الداخلي الكامل أدناه لعرض جميع الصور بدقة عالية.',
+    portNoteExt:'↓ حمّل ملف البورتفوليو الخارجي الكامل أدناه لعرض جميع الصور بدقة عالية.',
+    dl_t:['السيرة الذاتية','بورتفوليو التصميم الداخلي','بورتفوليو التصميم الخارجي'],
+    dl_s:['ملف PDF · طارق وائل سليم · 2025','ملف PDF · مشاريع التصميم الداخلي 2020–2024','ملف PDF · المشاريع المعمارية 2020–2024'],
+    dl_b:['تحميل السيرة الذاتية','تحميل','تحميل'],
+    clead:'متاح لأدوار الهندسة المعمارية التقنية وتنسيق نمذجة معلومات البناء عن بُعد. أردّ على جميع الاستفسارات المهنية خلال 24 ساعة — سواء كان لديك فرصة عمل أو تعاون أو مجرد نقاش معماري.',
+    cnote:'العربية (اللغة الأم) · الإنجليزية (متمكن) · مقيم في سلمية، حماة، سوريا · متاح للعمل عن بُعد في الخليج والعالم',
+    cc0l:'البريد الإلكتروني', cc1l:'الهاتف', cc2v:'مراسلة عبر واتساب',
+    flogoTxt:'طارق وائل سليم · مهندس معماري',
+    fcopy:'© 2025 طارق وائل سليم · جميع الحقوق محفوظة'
+  }
+};
+
+/* ════ PROJECT DATA (bilingual) ═════════════════════ */
+const PD = {
+  i0:{
+    en:{cat:'Interior Design',title:'Interior Majlis Design',desc:'A luxurious Majlis (formal reception room) featuring a dramatic book-matched marble feature wall with integrated backlit panel, custom sculptural chandelier with crystal drops, and bespoke upholstered seating. Full design development from concept visualisation through material finishes schedule and lighting coordination.',meta:[{l:'Type',v:'Majlis / Reception'},{l:'Style',v:'Contemporary Luxury'},{l:'Scope',v:'Full Interior Design'},{l:'Software',v:'AutoCAD, SketchUp, Lumion'},{l:'Location',v:'UAE'},{l:'Year',v:'2021–2023'}]},
+    ar:{cat:'تصميم داخلي',title:'تصميم المجلس الداخلي',desc:'مجلس فاخر يتميز بجدار رخامي مميز مع لوحة مضاءة من الخلف وثريا نحتية مخصصة بقطرات كريستالية ومجموعة جلوس مبطنة راقية. تطوير تصميمي كامل من التصور البصري حتى جداول التشطيبات وتنسيق الإضاءة.',meta:[{l:'النوع',v:'مجلس / استقبال'},{l:'الأسلوب',v:'فاخر معاصر'},{l:'النطاق',v:'تصميم داخلي كامل'},{l:'البرنامج',v:'أوتوكاد، سكتش أب، لوميون'},{l:'الموقع',v:'الإمارات العربية المتحدة'},{l:'السنة',v:'2021–2023'}]}
+  },
+  i1:{
+    en:{cat:'Interior Design',title:'Interior Living Area Design',desc:'Organic contemporary living area featuring custom bronze-patinated decorative screen dividers, walnut-veneered wall panelling, and integrated biophilic greenery. Complete interior coordination package produced at Zakhrafa Decore, Dubai.',meta:[{l:'Type',v:'Living Area'},{l:'Style',v:'Organic Contemporary'},{l:'Scope',v:'Interior Design & Coordination'},{l:'Software',v:'AutoCAD, Lumion'},{l:'Location',v:'Residential Villa, UAE'},{l:'Year',v:'2021–2022'}]},
+    ar:{cat:'تصميم داخلي',title:'تصميم منطقة المعيشة',desc:'منطقة معيشة عضوية معاصرة تتميز بفواصل زجاجية ذات طلاء برونزي مخصص وألواح جدارية من خشب الجوز مع عناصر خضراء حيوية متكاملة. حزمة تنسيق داخلي كاملة.',meta:[{l:'النوع',v:'منطقة معيشة'},{l:'الأسلوب',v:'عضوي معاصر'},{l:'النطاق',v:'تصميم وتنسيق داخلي'},{l:'البرنامج',v:'أوتوكاد، لوميون'},{l:'الموقع',v:'فيلا سكنية، الإمارات'},{l:'السنة',v:'2021–2022'}]}
+  },
+  i2:{
+    en:{cat:'Interior Design',title:'Interior Bedroom Design',desc:'Master bedroom suite with bespoke velvet-upholstered headboard wall featuring diagonal brass inlays, dark walnut vertical slat panels, integrated pendant and track lighting, and coffer ceiling detail. Full shop drawing package produced.',meta:[{l:'Type',v:'Master Bedroom'},{l:'Style',v:'Luxury Contemporary'},{l:'Scope',v:'Design & Shop Drawings'},{l:'Software',v:'AutoCAD'},{l:'Location',v:'Dubai, UAE'},{l:'Year',v:'2022–2023'}]},
+    ar:{cat:'تصميم داخلي',title:'تصميم غرفة النوم',desc:'جناح غرفة نوم رئيسي يتميز بجدار هيدبورد مخملي مع تطعيمات نحاسية قطرية وألواح جدارية عمودية من خشب الجوز الداكن وإضاءة معلقة مع تفاصيل سقف كوفر. حزمة رسومات تنفيذية كاملة.',meta:[{l:'النوع',v:'غرفة نوم رئيسية'},{l:'الأسلوب',v:'فاخر معاصر'},{l:'النطاق',v:'تصميم ورسومات تنفيذية'},{l:'البرنامج',v:'أوتوكاد'},{l:'الموقع',v:'دبي، الإمارات'},{l:'السنة',v:'2022–2023'}]}
+  },
+  i3:{
+    en:{cat:'Interior Design',title:'Interior Dressing Room Design',desc:'Full walk-in wardrobe system with mirrored sliding doors in dark walnut frames, integrated LED strip lighting throughout. Complete millwork shop drawings produced at Zakhrafa Decore, Dubai.',meta:[{l:'Type',v:'Walk-in Wardrobe'},{l:'Scope',v:'Millwork Shop Drawings'},{l:'Client',v:'Zakhrafa Decor, Dubai'},{l:'Software',v:'AutoCAD'},{l:'Location',v:'Dubai, UAE'},{l:'Year',v:'2021–2023'}]},
+    ar:{cat:'تصميم داخلي',title:'تصميم غرفة الملابس',desc:'نظام غرفة ملابس كاملة مع أبواب منزلقة مرآوية مدمجة في إطارات خشب جوز داكن وإضاءة ليد مدمجة في جميع الأرفف. رسومات نجارة تنفيذية كاملة.',meta:[{l:'النوع',v:'غرفة ملابس'},{l:'النطاق',v:'رسومات نجارة تنفيذية'},{l:'العميل',v:'زخرفة للديكور، دبي'},{l:'البرنامج',v:'أوتوكاد'},{l:'الموقع',v:'دبي، الإمارات'},{l:'السنة',v:'2021–2023'}]}
+  },
+  i4:{
+    en:{cat:'Interior Design',title:'Interior Bathroom Design',desc:'Two luxury bathroom schemes: dual-vanity master en-suite with full-height Calacatta marble cladding and custom floating timber vanity; spa-style bathroom with freestanding bath and feature art panel. Full tiling layouts and sanitary schedules produced at Zakhrafa Decore.',meta:[{l:'Type',v:'Luxury Bathroom'},{l:'Style',v:'Spa / Marble'},{l:'Scope',v:'Design & Tiling Layouts'},{l:'Client',v:'Zakhrafa Decor, Dubai'},{l:'Location',v:'Dubai, UAE'},{l:'Year',v:'2022–2023'}]},
+    ar:{cat:'تصميم داخلي',title:'تصميم الحمام',desc:'مخططان لحمامات فاخرة: حمام رئيسي مزدوج الحوض مع كساء رخام كالاكاتا بارتفاع كامل وخزانة خشبية عائمة؛ وحمام بأسلوب سبا مع حوض استحمام قائم ولوحة فنية مميزة. تخطيطات بلاط وجداول صحية كاملة.',meta:[{l:'النوع',v:'حمام فاخر'},{l:'الأسلوب',v:'سبا / رخام'},{l:'النطاق',v:'تصميم وتخطيطات بلاط'},{l:'العميل',v:'زخرفة للديكور، دبي'},{l:'الموقع',v:'دبي، الإمارات'},{l:'السنة',v:'2022–2023'}]}
+  },
+  e0:{
+    en:{cat:'Exterior / Architectural',title:'Residence Villa G+2 — Al Awir, Dubai',desc:'Full architectural documentation package including detailed shop drawings and execution drawings (plans, sections, elevations). Handled Dubai Municipality submissions and approvals. Coordinated between office and site teams. BOQ and quantity take-off included.',meta:[{l:'Type',v:'Residence Villa G+2'},{l:'Scope',v:'Full Arch. Drawings + BOQ'},{l:'Location',v:'Al Awir, Dubai, UAE'},{l:'Software',v:'AutoCAD, Revit'},{l:'Submission',v:'Dubai Municipality'},{l:'Year',v:'2021–2023'}]},
+    ar:{cat:'تصميم خارجي / معماري',title:'فيلا سكنية أرضي+2 — العوير، دبي',desc:'حزمة توثيق معماري كاملة تشمل رسومات تنفيذية تفصيلية (مسقط وقطاعات وواجهات). تقديمات واعتمادات بلدية دبي. تنسيق بين المكتب وفريق الموقع. جداول الكميات وحصر الأعمال.',meta:[{l:'النوع',v:'فيلا سكنية أرضي+2'},{l:'النطاق',v:'رسومات معمارية كاملة + كميات'},{l:'الموقع',v:'العوير، دبي، الإمارات'},{l:'البرنامج',v:'أوتوكاد، ريفيت'},{l:'التقديم',v:'بلدية دبي'},{l:'السنة',v:'2021–2023'}]}
+  },
+  e1:{
+    en:{cat:'Exterior / Architectural',title:'Residence Villa G+2 — Al Barsha, Dubai',desc:'Architectural design and full drawing set. Developed design concepts from initial brief to final construction drawings. Prepared feasibility studies and client-oriented design proposals. Handled Dubai Municipality submissions.',meta:[{l:'Type',v:'Residence Villa G+2'},{l:'Scope',v:'Architectural Design & Drawings'},{l:'Location',v:'Al Barsha, Dubai, UAE'},{l:'Software',v:'AutoCAD, Revit'},{l:'Submission',v:'Dubai Municipality'},{l:'Year',v:'2023–2024'}]},
+    ar:{cat:'تصميم خارجي / معماري',title:'فيلا سكنية أرضي+2 — البرشاء، دبي',desc:'تصميم معماري ومجموعة رسومات كاملة. تطوير مفاهيم التصميم من الإحاطة الأولية حتى رسومات البناء النهائية. دراسات جدوى ومقترحات تصميمية. تقديمات بلدية دبي.',meta:[{l:'النوع',v:'فيلا سكنية أرضي+2'},{l:'النطاق',v:'تصميم معماري ورسومات'},{l:'الموقع',v:'البرشاء، دبي، الإمارات'},{l:'البرنامج',v:'أوتوكاد، ريفيت'},{l:'التقديم',v:'بلدية دبي'},{l:'السنة',v:'2023–2024'}]}
+  },
+  e2:{
+    en:{cat:'Exterior / Architectural',title:'Residence Villa G+1 — Jumeira, Dubai',desc:'Full architectural documentation including construction drawings. Supervised on-site construction activities ensuring compliance with drawings and specifications. Coordinated with contractors and stakeholders to resolve execution issues.',meta:[{l:'Type',v:'Residence Villa G+1'},{l:'Scope',v:'Full Architectural Drawings'},{l:'Location',v:'Jumeira, Dubai, UAE'},{l:'Software',v:'AutoCAD, Revit'},{l:'Submission',v:'Dubai Municipality'},{l:'Year',v:'2021–2023'}]},
+    ar:{cat:'تصميم خارجي / معماري',title:'فيلا سكنية أرضي+1 — جميرا، دبي',desc:'توثيق معماري كامل يشمل رسومات البناء. الإشراف على أنشطة البناء الميداني لضمان الامتثال للرسومات والمواصفات. التنسيق مع المقاولين وأصحاب المصلحة لحل إشكاليات التنفيذ.',meta:[{l:'النوع',v:'فيلا سكنية أرضي+1'},{l:'النطاق',v:'رسومات معمارية كاملة'},{l:'الموقع',v:'جميرا، دبي، الإمارات'},{l:'البرنامج',v:'أوتوكاد، ريفيت'},{l:'التقديم',v:'بلدية دبي'},{l:'السنة',v:'2021–2023'}]}
+  },
+  e3:{
+    en:{cat:'Exterior / Architectural',title:'Commercial + Residence Building G+6 — Deira',desc:'Mixed-use building. Managed technical office operations including BOQs, contracts, and documentation. Prepared quantity take-offs and cost estimations. Handled Dubai Municipality submissions and approvals.',meta:[{l:'Type',v:'Commercial + Residential'},{l:'Floors',v:'G+6'},{l:'Location',v:'Deira, Dubai, UAE'},{l:'Scope',v:'Full Documentation & BOQ'},{l:'Software',v:'AutoCAD, Revit'},{l:'Year',v:'2021–2023'}]},
+    ar:{cat:'تصميم خارجي / معماري',title:'مبنى تجاري وسكني أرضي+6 — ديرة',desc:'مبنى متعدد الاستخدامات. إدارة عمليات المكتب الفني شاملة جداول الكميات والعقود والتوثيق. حصر الكميات وتقديرات التكلفة. تقديمات واعتمادات بلدية دبي.',meta:[{l:'النوع',v:'تجاري + سكني'},{l:'الطوابق',v:'أرضي+6'},{l:'الموقع',v:'ديرة، دبي، الإمارات'},{l:'النطاق',v:'توثيق كامل + كميات'},{l:'البرنامج',v:'أوتوكاد، ريفيت'},{l:'السنة',v:'2021–2023'}]}
+  }
+};
+
+/* ════ APPLY TRANSLATIONS ═══════════════════════════ */
+let isAr = false;
+
+function applyLang() {
+  const L = isAr ? T.ar : T.en;
+  const root = document.getElementById('HR');
+  root.lang = isAr ? 'ar' : 'en';
+  root.dir  = isAr ? 'rtl' : 'ltr';
+
+  // Nav
+  document.getElementById('logoName').textContent = L.logoName;
+  document.getElementById('lbtnTxt').textContent  = L.lbtn;
+  for(let i=0;i<5;i++){
+    document.getElementById('nl'+i).textContent = L.nl[i];
+    document.getElementById('mm'+i).textContent = L.mm[i];
+  }
+  // Hero
+  document.getElementById('hTag').textContent   = L.hTag;
+  document.getElementById('hTitle').textContent = L.hTitle;
+  document.getElementById('hSum').textContent   = L.hSum;
+  document.getElementById('btnPTxt').textContent = L.btnP;
+  document.getElementById('btnOTxt').textContent = L.btnO;
+  for(let i=0;i<3;i++) document.getElementById('s'+i).textContent = L.s[i];
+  document.getElementById('hScroll').textContent = L.hScroll;
+  // Section tags & headings
+  for(let i=0;i<4;i++) document.getElementById('stag'+i).textContent = L.stag[i];
+  document.getElementById('sh0En').textContent = L.sh0;
+  document.getElementById('sh0Em').textContent = L.sh0em;
+  document.getElementById('sh1En').textContent = L.sh1;
+  document.getElementById('sh1Em').textContent = L.sh1em;
+  document.getElementById('sh2En').textContent = L.sh2;
+  document.getElementById('sh2Em').textContent = L.sh2em;
+  document.getElementById('sh3En').textContent = L.sh3;
+  document.getElementById('sh3Em').textContent = L.sh3em;
+  // About
+  document.getElementById('bio1').textContent      = L.bio1;
+  document.getElementById('bio2').textContent      = L.bio2;
+  document.getElementById('focusLbl').textContent  = L.focusLbl;
+  document.getElementById('focusTxt').textContent  = L.focusTxt;
+  for(let i=0;i<5;i++){
+    document.getElementById('er'+i).textContent = L.er[i];
+    document.getElementById('ec'+i).textContent = L.ec[i];
+  }
+  // Skills
+  for(let i=0;i<8;i++) document.getElementById('sk'+i).textContent = L.sk[i];
+  document.getElementById('sk2n').textContent = L.sk2n;
+  document.getElementById('sk3n').textContent = L.sk3n;
+  document.getElementById('sk4n').textContent = L.sk4n;
+  document.getElementById('sk5n').textContent = L.sk5n;
+  document.getElementById('eduLbl').textContent   = L.eduLbl;
+  document.getElementById('eduTitle').textContent = L.eduTitle;
+  document.getElementById('eduSub').textContent   = L.eduSub;
+  // Tabs
+  document.getElementById('tab0').textContent = L.tab[0];
+  document.getElementById('tab1').innerHTML   = L.tab[1];
+  // Portfolio cards
+  ['i0','i1','i2','i3','i4'].forEach((k,i)=>{
+    document.getElementById('pc_'+k).textContent = L.pc_i[i];
+    document.getElementById('pt_'+k).textContent = L.pt_i[i];
+    document.getElementById('pl_'+k).textContent = L.pl_i[i];
+  });
+  ['e0','e1','e2','e3'].forEach((k,i)=>{
+    document.getElementById('pc_'+k).textContent = L.pc_e[i];
+    document.getElementById('pt_'+k).textContent = L.pt_e[i];
+    document.getElementById('pl_'+k).textContent = L.pl_e[i];
+  });
+  document.getElementById('portNoteInt').textContent = L.portNoteInt;
+  document.getElementById('portNoteExt').textContent = L.portNoteExt;
+  // Downloads
+  for(let i=0;i<3;i++){
+    document.getElementById('dl'+i+'t').textContent = L.dl_t[i];
+    document.getElementById('dl'+i+'s').textContent = L.dl_s[i];
+    document.getElementById('dl'+i+'b').textContent = L.dl_b[i];
+  }
+  // Contact
+  document.getElementById('clead').textContent = L.clead;
+  document.getElementById('cnote').textContent = L.cnote;
+  document.getElementById('cc0l').textContent  = L.cc0l;
+  document.getElementById('cc1l').textContent  = L.cc1l;
+  document.getElementById('cc2v').textContent  = L.cc2v;
+  // Footer
+  document.getElementById('flogoTxt').textContent = L.flogoTxt;
+  document.getElementById('fcopy').textContent    = L.fcopy;
+  // Skill bar direction
+  document.querySelectorAll('.skfi').forEach(b=>{
+    b.style.left  = isAr ? 'auto' : '0';
+    b.style.right = isAr ? '0' : 'auto';
+  });
+}
+
+document.getElementById('lbtn').addEventListener('click',()=>{
+  isAr = !isAr;
+  applyLang();
+});
+
+/* ════ CURSOR ════════════════════════════════════════ */
 const cur=document.getElementById('cur'),cring=document.getElementById('cring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'},{passive:true});
@@ -656,17 +889,32 @@ document.querySelectorAll('a,button,.pc,.dlc').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cring.style.width='46px';cring.style.height='46px'});
   el.addEventListener('mouseleave',()=>{cring.style.width='30px';cring.style.height='30px'});
 });
- 
-// ── NAV SCROLL ──────────────────────────────────
+
+/* ════ NAV SCROLL ════════════════════════════════════ */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>50),{passive:true});
- 
-// ── BURGER ──────────────────────────────────────
-const burg=document.getElementById('burg'),mm=document.getElementById('mmenu');
-burg.addEventListener('click',()=>{burg.classList.toggle('o');mm.classList.toggle('o');document.body.style.overflow=mm.classList.contains('o')?'hidden':''});
-document.querySelectorAll('.mml').forEach(a=>a.addEventListener('click',()=>{burg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow=''}));
- 
-// ── TABS ─────────────────────────────────────────
+
+/* ════ NAV ACTIVE ════════════════════════════════════ */
+const secs=['home','about','portfolio','downloads','contact'];
+const nls=document.querySelectorAll('.nav-link-txt');
+window.addEventListener('scroll',()=>{
+  let c='home';
+  secs.forEach(id=>{const s=document.getElementById(id);if(s&&scrollY>=s.offsetTop-200)c=id});
+  nls.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+c));
+},{passive:true});
+
+/* ════ BURGER ════════════════════════════════════════ */
+const burg=document.getElementById('burg'),mmenu=document.getElementById('mmenu');
+burg.addEventListener('click',()=>{
+  burg.classList.toggle('o');
+  mmenu.classList.toggle('o');
+  document.body.style.overflow=mmenu.classList.contains('o')?'hidden':'';
+});
+document.querySelectorAll('.mml').forEach(a=>a.addEventListener('click',()=>{
+  burg.classList.remove('o');mmenu.classList.remove('o');document.body.style.overflow='';
+}));
+
+/* ════ TABS ══════════════════════════════════════════ */
 document.querySelectorAll('.tbtn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const t=btn.dataset.tab;
@@ -676,159 +924,44 @@ document.querySelectorAll('.tbtn').forEach(btn=>{
     document.getElementById('tab-'+t).classList.add('a');
   });
 });
- 
-// ── LANGUAGE TOGGLE ──────────────────────────────
-const html=document.getElementById('html-root');
-const langBtn=document.getElementById('langBtn');
-const langLabel=document.getElementById('langLabel');
-const langLabelAr=document.getElementById('langLabelAr');
-let isAr=false;
- 
-function applyLang(){
-  // switch html attributes
-  html.lang=isAr?'ar':'en';
-  html.dir=isAr?'rtl':'ltr';
-  // toggle label visibility
-  langLabel.style.display=isAr?'none':'inline';
-  langLabelAr.style.display=isAr?'inline':'none';
-  // update all [data-en]/[data-ar] elements
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    const val=isAr?el.dataset.ar:el.dataset.en;
-    if(val!==undefined) el.innerHTML=val;
-  });
-  // fix RTL for skill bars
-  if(isAr){
-    document.querySelectorAll('.skfi').forEach(b=>{b.style.left='auto';b.style.right='0'});
-  } else {
-    document.querySelectorAll('.skfi').forEach(b=>{b.style.left='0';b.style.right='auto'});
-  }
-}
- 
-langBtn.addEventListener('click',()=>{isAr=!isAr;applyLang()});
- 
-// ── PROJECT DATA (bilingual) ─────────────────────
-const PD={
-  i0:{
-    en:{cat:'Interior Design',title:'Interior Majlis Design',desc:'A luxurious Majlis (formal reception room) featuring a dramatic book-matched marble feature wall with integrated backlit panel, custom sculptural chandelier with crystal drops, and bespoke upholstered seating arrangement. Full design development from concept visualisation through material finishes schedule and lighting coordination. Produced during tenure at Zakhrafa Decore, Dubai.',meta:[{l:'Type',v:'Majlis / Reception'},{l:'Style',v:'Contemporary Luxury'},{l:'Scope',v:'Full Interior Design'},{l:'Software',v:'AutoCAD, SketchUp, Lumion'},{l:'Location',v:'UAE'},{l:'Year',v:'2021–2023'}]},
-    ar:{cat:'تصميم داخلي',title:'تصميم المجلس الداخلي',desc:'مجلس فاخر يتميز بجدار رخامي مميز مع لوحة مضاءة من الخلف، وثريا نحتية مخصصة بقطرات كريستالية، ومجموعة جلوس مبطنة راقية. تطوير تصميمي كامل من التصور البصري حتى جداول التشطيبات وتنسيق الإضاءة.',meta:[{l:'النوع',v:'مجلس / استقبال'},{l:'الأسلوب',v:'فاخر معاصر'},{l:'النطاق',v:'تصميم داخلي كامل'},{l:'البرنامج',v:'AutoCAD، SketchUp، Lumion'},{l:'الموقع',v:'الإمارات العربية المتحدة'},{l:'السنة',v:'2021–2023'}]}
-  },
-  i1:{
-    en:{cat:'Interior Design',title:'Interior Living Area Design',desc:'Organic contemporary living area featuring custom bronze-patinated decorative screen dividers, walnut-veneered wall panelling, and integrated biophilic greenery. Complete interior coordination package produced during tenure at Zakhrafa Decore, Dubai.',meta:[{l:'Type',v:'Living Area'},{l:'Style',v:'Organic Contemporary'},{l:'Scope',v:'Interior Design & Coordination'},{l:'Software',v:'AutoCAD, Lumion'},{l:'Location',v:'Residential Villa, UAE'},{l:'Year',v:'2021–2022'}]},
-    ar:{cat:'تصميم داخلي',title:'تصميم منطقة المعيشة',desc:'منطقة معيشة عضوية معاصرة تتميز بفواصل زجاجية ذات طلاء برونزي مخصص وألواح جدارية من خشب الجوز مع عناصر خضراء حيوية متكاملة.',meta:[{l:'النوع',v:'منطقة معيشة'},{l:'الأسلوب',v:'عضوي معاصر'},{l:'النطاق',v:'تصميم وتنسيق داخلي'},{l:'البرنامج',v:'AutoCAD، Lumion'},{l:'الموقع',v:'فيلا سكنية، الإمارات'},{l:'السنة',v:'2021–2022'}]}
-  },
-  i2:{
-    en:{cat:'Interior Design',title:'Interior Bedroom Design',desc:'Master bedroom suite featuring a bespoke velvet-upholstered headboard wall with diagonal brass inlays, flanked by dark walnut vertical slat panels. Integrated pendant and track lighting with coffer ceiling detail. Full shop drawing package produced.',meta:[{l:'Type',v:'Master Bedroom'},{l:'Style',v:'Luxury Contemporary'},{l:'Scope',v:'Design & Shop Drawings'},{l:'Software',v:'AutoCAD'},{l:'Location',v:'Dubai, UAE'},{l:'Year',v:'2022–2023'}]},
-    ar:{cat:'تصميم داخلي',title:'تصميم غرفة النوم الداخلية',desc:'جناح غرفة نوم رئيسي يتميز بجدار هيدبورد مخملي مع تطعيمات نحاسية قطرية وألواح جدارية عمودية من خشب الجوز الداكن. إضاءة معلقة ومدمجة مع تفاصيل سقف كوفر. حزمة رسومات تنفيذية كاملة.',meta:[{l:'النوع',v:'غرفة نوم رئيسية'},{l:'الأسلوب',v:'فاخر معاصر'},{l:'النطاق',v:'تصميم ورسومات تنفيذية'},{l:'البرنامج',v:'AutoCAD'},{l:'الموقع',v:'دبي، الإمارات'},{l:'السنة',v:'2022–2023'}]}
-  },
-  i3:{
-    en:{cat:'Interior Design',title:'Interior Dressing Room Design',desc:'Full walk-in wardrobe system with mirrored sliding doors set into dark walnut joinery frames. Integrated LED strip lighting throughout. Complete millwork shop drawings produced at Zakhrafa Decore, Dubai.',meta:[{l:'Type',v:'Walk-in Wardrobe'},{l:'Scope',v:'Millwork Shop Drawings'},{l:'Client',v:'Zakhrafa Decor, Dubai'},{l:'Software',v:'AutoCAD'},{l:'Location',v:'Dubai, UAE'},{l:'Year',v:'2021–2023'}]},
-    ar:{cat:'تصميم داخلي',title:'تصميم غرفة الملابس',desc:'نظام غرفة ملابس كاملة مع أبواب منزلقة مرآوية مدمجة في إطارات خشب جوز داكن. إضاءة LED مدمجة في جميع أرفف ومساحات التعليق. رسومات نجارة تنفيذية كاملة.',meta:[{l:'النوع',v:'غرفة ملابس'},{l:'النطاق',v:'رسومات نجارة تنفيذية'},{l:'العميل',v:'زخرفة للديكور، دبي'},{l:'البرنامج',v:'AutoCAD'},{l:'الموقع',v:'دبي، الإمارات'},{l:'السنة',v:'2021–2023'}]}
-  },
-  i4:{
-    en:{cat:'Interior Design',title:'Interior Bathroom Design',desc:'Two luxury bathroom schemes: dual-vanity master en-suite with full-height Calacatta marble cladding and custom floating timber vanity; and a spa-style bathroom with freestanding bath and feature art panel. Full tiling layouts and plumbing coordination produced at Zakhrafa Decore, Dubai.',meta:[{l:'Type',v:'Luxury Bathroom'},{l:'Style',v:'Spa / Marble'},{l:'Scope',v:'Design & Tiling Layouts'},{l:'Client',v:'Zakhrafa Decor, Dubai'},{l:'Location',v:'Dubai, UAE'},{l:'Year',v:'2022–2023'}]},
-    ar:{cat:'تصميم داخلي',title:'تصميم الحمام الداخلي',desc:'مخططان لحمامات فاخرة: حمام رئيسي مزدوج الحوض مع كساء رخام كالاكاتا بارتفاع كامل وخزانة خشبية عائمة مخصصة؛ وحمام بأسلوب سبا مع حوض استحمام قائم ولوحة فنية مميزة. تخطيطات بلاط كاملة وتنسيق سباكة.',meta:[{l:'النوع',v:'حمام فاخر'},{l:'الأسلوب',v:'سبا / رخام'},{l:'النطاق',v:'تصميم وتخطيطات بلاط'},{l:'العميل',v:'زخرفة للديكور، دبي'},{l:'الموقع',v:'دبي، الإمارات'},{l:'السنة',v:'2022–2023'}]}
-  },
-  e0:{
-    en:{cat:'Exterior / Architectural',title:'Residence Villa G+2 — Al Awir, Dubai',desc:'Full architectural documentation package. Prepared detailed shop drawings and execution drawings (plans, sections, elevations). Handled Dubai Municipality submissions and approvals. Coordinated between office and site teams. BOQ and quantity take-off included.',meta:[{l:'Type',v:'Residence Villa G+2'},{l:'Scope',v:'Full Arch. Drawings + BOQ'},{l:'Location',v:'Al Awir, Dubai, UAE'},{l:'Software',v:'AutoCAD, Revit'},{l:'Submission',v:'Dubai Municipality'},{l:'Year',v:'2021–2023'}]},
-    ar:{cat:'تصميم خارجي / معماري',title:'فيلا سكنية ط+2 — العوير، دبي',desc:'حزمة توثيق معماري كاملة. رسومات تنفيذية تفصيلية (مسقط، قطاعات، واجهات). تقديمات واعتمادات بلدية دبي. تنسيق بين المكتب وفريق الموقع. جداول الكميات وحصر الأعمال.',meta:[{l:'النوع',v:'فيلا سكنية ط+2'},{l:'النطاق',v:'رسومات معمارية كاملة + كميات'},{l:'الموقع',v:'العوير، دبي، الإمارات'},{l:'البرنامج',v:'AutoCAD، Revit'},{l:'التقديم',v:'بلدية دبي'},{l:'السنة',v:'2021–2023'}]}
-  },
-  e1:{
-    en:{cat:'Exterior / Architectural',title:'Residence Villa G+2 — Al Barsha, Dubai',desc:'Architectural design and full drawing set for a residential villa. Developed design concepts from initial brief to final construction drawings. Prepared feasibility studies and client-oriented design proposals. Ensured functional and aesthetic alignment.',meta:[{l:'Type',v:'Residence Villa G+2'},{l:'Scope',v:'Architectural Design & Drawings'},{l:'Location',v:'Al Barsha, Dubai, UAE'},{l:'Software',v:'AutoCAD, Revit'},{l:'Submission',v:'Dubai Municipality'},{l:'Year',v:'2023–2024'}]},
-    ar:{cat:'تصميم خارجي / معماري',title:'فيلا سكنية ط+2 — البرشاء، دبي',desc:'تصميم معماري ومجموعة رسومات كاملة لفيلا سكنية. تطوير مفاهيم التصميم من الإحاطة الأولية حتى رسومات البناء النهائية. دراسات جدوى ومقترحات تصميمية موجهة للعميل.',meta:[{l:'النوع',v:'فيلا سكنية ط+2'},{l:'النطاق',v:'تصميم معماري ورسومات'},{l:'الموقع',v:'البرشاء، دبي، الإمارات'},{l:'البرنامج',v:'AutoCAD، Revit'},{l:'التقديم',v:'بلدية دبي'},{l:'السنة',v:'2023–2024'}]}
-  },
-  e2:{
-    en:{cat:'Exterior / Architectural',title:'Residence Villa G+1 — Jumeira, Dubai',desc:'Full architectural documentation including construction drawings. Supervised on-site construction activities ensuring compliance with drawings and specifications. Coordinated with contractors and stakeholders to resolve execution issues.',meta:[{l:'Type',v:'Residence Villa G+1'},{l:'Scope',v:'Full Architectural Drawings'},{l:'Location',v:'Jumeira, Dubai, UAE'},{l:'Software',v:'AutoCAD, Revit'},{l:'Submission',v:'Dubai Municipality'},{l:'Year',v:'2021–2023'}]},
-    ar:{cat:'تصميم خارجي / معماري',title:'فيلا سكنية ط+1 — جميرا، دبي',desc:'توثيق معماري كامل يشمل رسومات البناء. الإشراف على أنشطة البناء الميداني لضمان الامتثال للرسومات والمواصفات. التنسيق مع المقاولين وأصحاب المصلحة.',meta:[{l:'النوع',v:'فيلا سكنية ط+1'},{l:'النطاق',v:'رسومات معمارية كاملة'},{l:'الموقع',v:'جميرا، دبي، الإمارات'},{l:'البرنامج',v:'AutoCAD، Revit'},{l:'التقديم',v:'بلدية دبي'},{l:'السنة',v:'2021–2023'}]}
-  },
-  e3:{
-    en:{cat:'Exterior / Architectural',title:'Commercial + Residence Building G+6 — Deira',desc:'Mixed-use building with ground-floor commercial and six residential floors. Managed technical office operations including BOQs, contracts, and documentation. Prepared quantity take-offs and cost estimations. Handled Dubai Municipality submissions.',meta:[{l:'Type',v:'Commercial + Residential'},{l:'Floors',v:'G+6'},{l:'Location',v:'Deira, Dubai, UAE'},{l:'Scope',v:'Full Documentation & BOQ'},{l:'Software',v:'AutoCAD, Revit'},{l:'Year',v:'2021–2023'}]},
-    ar:{cat:'تصميم خارجي / معماري',title:'مبنى تجاري وسكني ط+6 — ديرة',desc:'مبنى متعدد الاستخدامات: دور أرضي تجاري وستة طوابق سكنية. إدارة عمليات المكتب الفني شاملة جداول الكميات والعقود والتوثيق. حصر الكميات وتقديرات التكلفة. تقديمات بلدية دبي.',meta:[{l:'النوع',v:'تجاري + سكني'},{l:'الطوابق',v:'ط+6'},{l:'الموقع',v:'ديرة، دبي، الإمارات'},{l:'النطاق',v:'توثيق كامل + كميات'},{l:'البرنامج',v:'AutoCAD، Revit'},{l:'السنة',v:'2021–2023'}]}
-  }
-};
- 
-// ── MODAL ────────────────────────────────────────
-const mbg=document.getElementById('mbg'),mimg=document.getElementById('mimg'),mcat=document.getElementById('mcat'),mtit=document.getElementById('mtit'),mdesc=document.getElementById('mdesc'),mmeta=document.getElementById('mmeta');
- 
+
+/* ════ MODAL ═════════════════════════════════════════ */
+const mbg=document.getElementById('mbg');
+const mimg=document.getElementById('mimg'),mcat=document.getElementById('mcat'),
+      mtit=document.getElementById('mtit'),mdesc=document.getElementById('mdesc'),mmeta=document.getElementById('mmeta');
+
 document.querySelectorAll('.pc').forEach(card=>{
   card.addEventListener('click',()=>{
-    const k=card.dataset.p,p=PD[k];if(!p)return;
-    const lang=isAr?'ar':'en';
-    const d=p[lang];
+    const k=card.dataset.p, p=PD[k]; if(!p) return;
+    const d=isAr?p.ar:p.en;
     const src=card.querySelector('.pthumb img').src;
     mimg.innerHTML=`<img src="${src}" alt="${d.title}">`;
-    mcat.textContent=d.cat;
-    mtit.textContent=d.title;
-    mdesc.textContent=d.desc;
+    mcat.textContent=d.cat; mtit.textContent=d.title; mdesc.textContent=d.desc;
     mmeta.innerHTML=d.meta.map(m=>`<div class="mmi"><div class="mmil">${m.l}</div><div class="mmiv">${m.v}</div></div>`).join('');
-    mbg.classList.add('o');
-    document.body.style.overflow='hidden';
+    mbg.classList.add('o'); document.body.style.overflow='hidden';
   });
 });
-document.getElementById('mcls').addEventListener('click',cls);
-mbg.addEventListener('click',e=>{if(e.target===mbg)cls()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')cls()});
-function cls(){mbg.classList.remove('o');document.body.style.overflow=''}
- 
-// ── REVEAL ───────────────────────────────────────
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');io.unobserve(e.target)}})},{threshold:.1});
+document.getElementById('mcls').addEventListener('click',closeMod);
+mbg.addEventListener('click',e=>{if(e.target===mbg)closeMod()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMod()});
+function closeMod(){mbg.classList.remove('o');document.body.style.overflow=''}
+
+/* ════ REVEAL ════════════════════════════════════════ */
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');io.unobserve(e.target)}});
+},{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
- 
-// ── SKILL BARS ───────────────────────────────────
+
+/* ════ SKILL BARS ════════════════════════════════════ */
 const sio=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.skfi').forEach(b=>{b.style.width=b.dataset.w+'%'});sio.unobserve(e.target)}});
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skfi').forEach(b=>{b.style.width=b.dataset.w+'%'});
+      sio.unobserve(e.target);
+    }
+  });
 },{threshold:.2});
 document.querySelectorAll('.skwrap').forEach(el=>sio.observe(el));
- 
-// ── ACTIVE NAV HIGHLIGHT ─────────────────────────
-const sections=['home','about','portfolio','downloads','contact'];
-const navLinks=document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',()=>{
-  let cur='home';
-  sections.forEach(id=>{const s=document.getElementById(id);if(s&&scrollY>=s.offsetTop-200)cur=id});
-  navLinks.forEach(a=>{a.classList.toggle('cur',a.getAttribute('href')==='#'+cur)});
-},{passive:true});
 </script>
- 
-<!--
-╔══════════════════════════════════════════════════════════════╗
-║           HOW TO ADD YOUR PROJECT IMAGES                    ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  1. Create a folder called "images" next to index.html       ║
-║                                                              ║
-║  2. Add your images with these exact filenames:              ║
-║                                                              ║
-║     INTERIOR PROJECTS:                                       ║
-║     ├── interior_majlis.jpg    (Majlis render)               ║
-║     ├── interior_living.jpg    (Living area render)          ║
-║     ├── interior_bedroom.jpg   (Bedroom render)              ║
-║     ├── interior_dressing.jpg  (Dressing room render)        ║
-║     └── interior_bathroom.jpg  (Bathroom render)             ║
-║                                                              ║
-║     EXTERIOR PROJECTS:                                       ║
-║     ├── ext_alawir.jpg         (Al Awir villa)               ║
-║     ├── ext_albarsha.jpg       (Al Barsha villa)             ║
-║     ├── ext_jumeira.jpg        (Jumeira villa)               ║
-║     └── ext_deira.jpg          (Deira commercial G+6)        ║
-║                                                              ║
-║  3. Recommended size: 1200×900 px, JPG quality 80%          ║
-║     (keeps file size small for fast loading)                 ║
-║                                                              ║
-║  4. If using a different filename, change the src="..." in  ║
-║     the HTML above. The onerror= shows a placeholder         ║
-║     automatically if the image is not found.                 ║
-║                                                              ║
-║  FOLDER STRUCTURE:                                           ║
-║     your-website/                                            ║
-║     ├── index.html                                           ║
-║     ├── images/                                              ║
-║     │   ├── interior_majlis.jpg                              ║
-║     │   └── ... (all other images)                           ║
-║     ├── ENG_TarekCVPlus.pdf                                  ║
-║     ├── Portfolio_Interior.pdf                               ║
-║     └── Portfolio_Exterior.pdf                               ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
--->
 </body>
 </html>
